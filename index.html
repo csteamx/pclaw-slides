@@ -2141,162 +2141,108 @@
         color: transparent;
       }
 
-      /* ---------- 截图位 ---------- */
-      .shot {
-        position: relative;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 0;
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid var(--line-2);
-        background: var(--panel);
-        box-shadow: var(--shadow);
-      }
-      .shot-bar {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        flex: none;
-        padding: 9px 14px;
-        font-size: 14px;
-        color: var(--muted);
-        background: var(--panel-2);
-        border-bottom: 1px solid var(--line);
-        white-space: nowrap;
-      }
-      .shot-bar i {
-        flex: none;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--line-2);
-      }
-      .shot-bar span {
-        margin-left: 8px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .shot-body {
-        position: relative;
+      /* ---------- 现场演示提示 / 演示路线 ---------- */
+      .cue {
         flex: 1;
-        min-height: 0;
-      }
-      .shot.has .shot-body {
-        background: #fff;
-      }
-      .shot img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: top center;
-        display: none;
-        cursor: zoom-in;
-      }
-      .shot.has img {
-        display: block;
-      }
-      .shot-ph {
-        position: absolute;
-        inset: 14px;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 20px;
+        padding: 28px 30px;
+        border-radius: 16px;
+        border: 1.5px dashed color-mix(in srgb, var(--blue) 55%, transparent);
+        background: color-mix(in srgb, var(--blue) 7%, transparent);
         justify-content: center;
-        gap: 10px;
-        padding: 16px;
-        text-align: center;
-        color: var(--faint);
-        border: 2px dashed var(--line-2);
-        border-radius: 10px;
       }
-      .shot.has .shot-ph {
-        display: none;
-      }
-      .shot-ph svg {
-        width: 44px;
-        height: 44px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-      .shot-ph b {
-        font-size: 20px;
-        color: var(--muted);
-      }
-      .shot-ph span {
+      .cue-badge {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px 4px 8px;
+        border-radius: 999px;
         font-size: 16px;
-        line-height: 1.5;
+        font-weight: 600;
+        color: #fff;
+        background: var(--grad);
       }
-      .shot-ph code {
-        font-family: var(--mono);
-        font-size: 14px;
-        padding: 2px 8px;
-        border-radius: 6px;
-        background: var(--panel-2);
+      .cue-badge svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+      .cue-t {
+        font-size: 24px;
+      }
+      .cue-where {
+        font-size: 23px;
+        font-weight: 600;
+        color: var(--blue);
+      }
+      .cue-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .cue-list li {
+        position: relative;
+        padding-left: 22px;
+        font-size: 22px;
+        line-height: 1.5;
         color: var(--muted);
       }
-      .gallery {
+      .cue-list li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 0.6em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--blue);
+      }
+      .route {
         flex: 1;
-        min-height: 0;
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
-      .gallery .shot-bar {
-        font-size: 13px;
-        padding: 7px 12px;
-      }
-      .gallery .shot-ph {
-        inset: 10px;
-        gap: 6px;
-        padding: 10px;
-      }
-      .gallery .shot-ph svg {
-        width: 28px;
-        height: 28px;
-      }
-      .gallery .shot-ph b {
-        font-size: 15px;
-      }
-      .gallery .shot-ph span {
-        display: none;
-      }
-      .gallery .shot-ph code {
-        font-size: 12px;
-      }
-      #lightbox {
-        position: fixed;
-        inset: 0;
-        z-index: 65;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        padding: 28px;
-        background: rgba(4, 6, 14, 0.92);
-        cursor: zoom-out;
-      }
-      body.lb #lightbox {
+      .rt {
         display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 24px 26px;
+        border-radius: 16px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        justify-content: center;
       }
-      #lightbox img {
-        max-width: 100%;
-        max-height: calc(100% - 44px);
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      .rt-n {
+        font-size: 30px;
+        color: var(--blue);
       }
-      #lightbox p {
-        color: #c9d1e6;
-        font-size: 16px;
+      .rt b {
+        font-size: 28px;
+      }
+      .rt-w {
+        font-size: 17px;
+        color: var(--blue);
+      }
+      .rt p {
+        font-size: 20px;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+      .route-foot {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 20px;
+        font-size: 19px;
+        color: var(--muted);
       }
 
       /* ---------- 外层控件 ---------- */
@@ -3302,7 +3248,7 @@
           </p>
           <p>
             ⚠️ 现场网络或额度出问题：输入
-            <b>13</b> 回车跳到演示截图页，或切到备用录屏。
+            <b>13</b> 回车跳到演示路线页，或切到备用录屏。
           </p>
         </aside>
       </section>
@@ -3319,36 +3265,54 @@
               <span class="where">产品 → AI 助手</span>
               <h3>规划需求</h3>
             </div>
-            <figure
-              class="shot"
-              data-shot="01-product-plan"
-              data-cap="按产品描述规划出的需求"
-            ></figure>
-            <p class="pc-note">读产品描述，写清用户价值、验收标准、优先级</p>
+            <div class="cue">
+              <span class="cue-badge"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+                >现场演示</span
+              >
+              <div class="cue-where">产品「专注番茄」→ AI 助手</div>
+              <ul class="cue-list">
+                <li>按产品描述规划出 3 条需求</li>
+                <li>每条带用户价值、验收标准、优先级</li>
+                <li>勾选后一键建进产品</li>
+              </ul>
+            </div>
           </div>
           <div class="pcol2 rise" style="--d: 2">
             <div class="ft">
               <span class="where">项目 → AI 助手 → 工作项</span>
               <h3>拆用户故事</h3>
             </div>
-            <figure
-              class="shot"
-              data-shot="02-story-plan"
-              data-cap="AI 拆出的用户故事"
-            ></figure>
-            <p class="pc-note">优先级、故事点、风险；依赖用「阻塞」关联</p>
+            <div class="cue">
+              <span class="cue-badge"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+                >现场演示</span
+              >
+              <div class="cue-where">项目 → AI 助手 → 工作项</div>
+              <ul class="cue-list">
+                <li>从需求拆出用户故事</li>
+                <li>优先级、故事点、风险</li>
+                <li>依赖用「阻塞」关联</li>
+              </ul>
+            </div>
           </div>
           <div class="pcol2 rise" style="--d: 3">
             <div class="ft">
               <span class="where">项目 → AI 助手 → 迭代</span>
               <h3>排迭代</h3>
             </div>
-            <figure
-              class="shot"
-              data-shot="03-sprint-plan"
-              data-cap="AI 按容量排好的迭代"
-            ></figure>
-            <p class="pc-note">按容量、优先级和依赖装填，确认后建迭代</p>
+            <div class="cue">
+              <span class="cue-badge"
+                ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+                >现场演示</span
+              >
+              <div class="cue-where">项目 → AI 助手 → 迭代</div>
+              <ul class="cue-list">
+                <li>填容量和起止时间</li>
+                <li>AI 按优先级和依赖装填</li>
+                <li>确认后建迭代并排入</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="principle rise" style="--d: 4; margin-top: 22px">
@@ -3356,11 +3320,17 @@
           也能只读分析代码，判断是缺陷还是新需求。
         </div>
         <aside class="notes">
-          <p class="faint">⏱ 1 分钟（AI 编码时讲）</p>
-          <p>（AI 写代码的这一两分钟，看看它前面几步是怎么来的。）</p>
+          <p class="faint">⏱ 1 分钟 → 切到浏览器</p>
           <p>
-            产品描述 → AI 规划需求，每条带用户价值和验收标准；需求进项目，AI
-            拆成用户故事，依赖用 PingCode 原生的「阻塞」关联；再按容量排进迭代。
+            （AI
+            在编码时，可以在另一个标签页演示这三步；它们是提前做好的，PingCode
+            里都有真实记录。）
+          </p>
+          <p>
+            依次打开：产品「专注番茄」的 AI 助手，看 AI 按产品描述规划出的 3
+            条需求；项目 AI
+            助手的「工作项」，看拆出的用户故事和依赖；「迭代」，看按容量排好的
+            Sprint。
           </p>
           <p>原则：<b>AI 给建议、人来拍板</b>，所有创建都要人点按钮。</p>
         </aside>
@@ -3463,12 +3433,18 @@
               </p>
             </div>
           </div>
-          <figure
-            class="shot rise"
-            style="--d: 2"
-            data-shot="07-wiki"
-            data-cap="Wiki：「专注计时」的 AI 研发纪要"
-          ></figure>
+          <div class="cue">
+            <span class="cue-badge"
+              ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+              >现场演示</span
+            >
+            <div class="cue-where">Wiki →「专注计时」的 AI 研发纪要</div>
+            <ul class="cue-list">
+              <li>总结、改动文件、分支与 PR 都在一页</li>
+              <li>纪要已关联到工作项，点编号直达</li>
+              <li>迭代页再看 AI 迭代总结</li>
+            </ul>
+          </div>
         </div>
         <aside class="notes">
           <p class="faint">⏱ 1 分钟（演示结束后，累计约 12:00）</p>
@@ -3479,7 +3455,9 @@
             文档里插入某次研发的记录。
           </p>
           <p>
-            右边是「专注计时」那一篇真实的纪要：总结、改动文件、分支和 PR 都在。
+            → 切到浏览器，打开 Wiki
+            里「专注计时」那篇纪要：总结、改动文件、分支和 PR
+            都在，点编号回到工作项。
           </p>
         </aside>
       </section>
@@ -3743,59 +3721,77 @@
       </section>
 
       <!-- 13 演示截图 -->
-      <section class="slide" data-title="演示截图">
-        <header class="hd" style="margin-bottom: 26px">
-          <div class="kicker">回顾 · 演示截图</div>
+      <section class="slide" data-title="演示路线">
+        <header class="hd" style="margin-bottom: 30px">
+          <div class="kicker">演示 · 路线</div>
           <h2 class="title">专注番茄：从一个产品想法到实现落地</h2>
         </header>
-        <div class="gallery">
-          <figure
-            class="shot"
-            data-shot="01-product-plan"
-            data-cap="① AI 规划需求"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="02-story-plan"
-            data-cap="② 拆用户故事"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="03-sprint-plan"
-            data-cap="③ 排迭代"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="04-workitem"
-            data-cap="④ 工作项 AI 助手"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="05-review"
-            data-cap="⑤ AI 审查结论"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="06-pr"
-            data-cap="⑥ 提交 PR、合并后自动完成"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="07-wiki"
-            data-cap="⑦ Wiki 研发纪要"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="08-tomato"
-            data-cap="⑧ 专注番茄页面"
-          ></figure>
+        <div class="route">
+          <div class="rt rise" style="--d: 1">
+            <span class="rt-n">①</span>
+            <b>规划需求</b>
+            <span class="rt-w">产品 → AI 助手</span>
+            <p>AI 按产品描述规划 3 条需求</p>
+          </div>
+          <div class="rt rise" style="--d: 2">
+            <span class="rt-n">②</span>
+            <b>拆用户故事</b>
+            <span class="rt-w">项目 → AI 助手 → 工作项</span>
+            <p>优先级、故事点、依赖</p>
+          </div>
+          <div class="rt rise" style="--d: 3">
+            <span class="rt-n">③</span>
+            <b>排迭代</b>
+            <span class="rt-w">项目 → AI 助手 → 迭代</span>
+            <p>按容量排好 Sprint</p>
+          </div>
+          <div class="rt rise" style="--d: 4">
+            <span class="rt-n">④</span>
+            <b>开发方案</b>
+            <span class="rt-w">工作项「完成提醒」→ AI 助手</span>
+            <p>自动带入上下文，只读出方案</p>
+          </div>
+          <div class="rt rise" style="--d: 5">
+            <span class="rt-n">⑤</span>
+            <b>编码</b>
+            <span class="rt-w">同一页签</span>
+            <p>逐字输出，列出改动文件</p>
+          </div>
+          <div class="rt rise" style="--d: 6">
+            <span class="rt-n">⑥</span>
+            <b>AI 审查</b>
+            <span class="rt-w">同一页签</span>
+            <p>必须修改 / 建议修改，结论留档</p>
+          </div>
+          <div class="rt rise" style="--d: 7">
+            <span class="rt-n">⑦</span>
+            <b>提交 PR</b>
+            <span class="rt-w">同一页签 → GitHub</span>
+            <p>提 PR，合并后自动完成</p>
+          </div>
+          <div class="rt rise" style="--d: 8">
+            <span class="rt-n">⑧</span>
+            <b>沉淀与效果</b>
+            <span class="rt-w">Wiki 纪要 + 打开 index.html</span>
+            <p>倒计时结束弹提示、响一声</p>
+          </div>
         </div>
+        <p class="route-foot rise" style="--d: 9">
+          <span class="cue-badge"
+            ><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg
+            >现场演示</span
+          >
+          按顺序切到浏览器里的正式页面，①–③ 和「专注计时」已提前做好，④–⑦
+          现场做「完成提醒」
+        </p>
         <aside class="notes">
           <p class="faint">
-            ⏱ 30 秒（演示正常时快速带过；演示出问题时用这一页讲完流程）
+            ⏱ 30
+            秒（演示顺利时快速带过，当作回顾；演示出问题时对着这一页口头走一遍）
           </p>
           <p>
-            现场演示的备份：按顺序把整个流程过一遍。点任意一张截图可以放大，再点一下或按任意键关闭。
+            回顾一下刚才走过的路：从产品想法到需求、用户故事、迭代，再到工作项里的方案、编码、审查、PR，最后沉淀到
+            Wiki、页面跑起来。
           </p>
         </aside>
       </section>
@@ -3894,10 +3890,6 @@
             <td>黑屏（切去演示时用）</td>
           </tr>
           <tr>
-            <td>点击截图</td>
-            <td>放大查看（任意键关闭）</td>
-          </tr>
-          <tr>
             <td><kbd>Ctrl</kbd> + <kbd>P</kbd></td>
             <td>导出 PDF（每页一张）</td>
           </tr>
@@ -3905,10 +3897,6 @@
       </div>
     </div>
     <div id="black"></div>
-    <div id="lightbox">
-      <img id="lb-img" alt="" />
-      <p id="lb-cap"></p>
-    </div>
     <div id="toast" class="toast">
       <kbd>→</kbd> 翻页 · <kbd>F</kbd> 全屏 · <kbd>S</kbd> 演讲者视图 ·
       <kbd>O</kbd> 总览 · <kbd>T</kbd> 主题 · <kbd>?</kbd> 帮助
@@ -3935,44 +3923,6 @@
         let idx = 0;
         let step = 0;
         let presenterWin = null;
-
-        /* ---- 截图位：shots/<名字>.png|jpg|jpeg|webp，找不到就显示占位 ---- */
-        const SHOT_EXTS = ["png", "jpg", "jpeg", "webp"];
-        const CAMERA =
-          '<svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></svg>';
-        deck.querySelectorAll(".shot").forEach((f) => {
-          const name = f.dataset.shot;
-          const cap = f.dataset.cap || "";
-          f.innerHTML =
-            '<div class="shot-bar"><i></i><i></i><i></i><span></span></div>' +
-            '<div class="shot-body"><img alt="" /><div class="shot-ph">' +
-            CAMERA +
-            "<b>截图待补</b><span></span><code></code></div></div>";
-          f.querySelector(".shot-bar span").textContent = cap;
-          f.querySelector(".shot-ph span").textContent = cap;
-          f.querySelector(".shot-ph code").textContent =
-            "shots/" + name + ".png";
-          const img = f.querySelector("img");
-          img.alt = cap;
-          let k = 0;
-          img.onload = () => f.classList.add("has");
-          img.onerror = () => {
-            k += 1;
-            if (k < SHOT_EXTS.length)
-              img.src = "shots/" + name + "." + SHOT_EXTS[k];
-          };
-          img.src = "shots/" + name + "." + SHOT_EXTS[0];
-        });
-        deck.addEventListener("click", (e) => {
-          const f = e.target.closest(".shot.has");
-          if (!f) return;
-          $("lb-img").src = f.querySelector("img").src;
-          $("lb-cap").textContent = f.dataset.cap || "";
-          body.classList.add("lb");
-        });
-        $("lightbox").addEventListener("click", () =>
-          body.classList.remove("lb"),
-        );
 
         const savedTheme = localStorage.getItem("pclaw-deck-theme");
         if (savedTheme) root.dataset.theme = savedTheme;
@@ -4193,11 +4143,6 @@
         addEventListener("keydown", (e) => {
           if (e.ctrlKey || e.metaKey || e.altKey) return;
           const k = e.key;
-          if (body.classList.contains("lb")) {
-            body.classList.remove("lb");
-            e.preventDefault();
-            return;
-          }
           if (body.classList.contains("help")) {
             body.classList.remove("help");
             e.preventDefault();
