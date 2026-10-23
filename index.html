@@ -320,9 +320,9 @@
       }
       .cover-grid {
         display: grid;
-        grid-template-columns: 1.55fr 1fr;
+        grid-template-columns: 1.3fr 1fr;
         align-items: center;
-        gap: 40px;
+        gap: 48px;
       }
       .brand-row {
         display: flex;
@@ -338,23 +338,29 @@
         flex: none;
       }
       .cover-title {
-        font-size: 70px;
+        font-size: 84px;
         white-space: nowrap;
-        line-height: 1.24;
+        line-height: 1.2;
         font-weight: 800;
         margin-top: 44px;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.02em;
+      }
+      .cover-lead {
+        font-size: 32px;
+        font-weight: 600;
+        margin-top: 30px;
+        letter-spacing: 0.02em;
       }
       .cover-sub {
-        font-size: 28px;
+        font-size: 22px;
         color: var(--muted);
-        margin-top: 28px;
+        margin-top: 16px;
         line-height: 1.6;
       }
       .cli-row {
         display: flex;
         gap: 12px;
-        margin-top: 40px;
+        margin-top: 34px;
         flex-wrap: wrap;
       }
       .cover-foot {
@@ -364,60 +370,101 @@
         font-size: 18px;
         color: var(--faint);
       }
-      .orbit {
+      .flow4 {
         position: relative;
-        width: 460px;
-        height: 460px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 480px;
         margin-left: auto;
+        padding-left: 44px;
       }
-      .orbit .ring {
+      .f4-line {
         position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        border: 1.5px dashed var(--line-2);
-        animation: spin 60s linear infinite;
+        left: 15px;
+        top: 44px;
+        bottom: 44px;
+        width: 2px;
+        border-radius: 2px;
+        background: linear-gradient(
+          var(--violet),
+          var(--blue),
+          var(--cyan),
+          var(--green)
+        );
       }
-      .orbit .ring::after {
-        content: "";
+      .f4-line i {
         position: absolute;
-        top: -7px;
-        left: calc(50% - 7px);
-        width: 14px;
-        height: 14px;
+        left: -5px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
-        background: var(--blue);
-        box-shadow: 0 0 24px var(--blue);
+        background: #fff;
+        box-shadow: 0 0 18px 4px var(--blue);
+        animation: flowdot 3.6s ease-in-out infinite;
       }
-      .orbit .ring2 {
-        position: absolute;
-        inset: 105px;
-        border-radius: 50%;
-        border: 1px solid var(--line);
-      }
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
+      @keyframes flowdot {
+        0% {
+          top: 0;
+          opacity: 0;
+        }
+        12%,
+        88% {
+          opacity: 1;
+        }
+        100% {
+          top: 100%;
+          opacity: 0;
         }
       }
-      .orbit .core {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 150px;
-        height: 150px;
-        transform: translate(-50%, -50%);
-        filter: drop-shadow(0 20px 50px rgba(107, 155, 255, 0.45));
-      }
-      .orbit .on {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        border-radius: 14px;
-        background: var(--bg);
+      .f4 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 18px 22px;
+        border-radius: 18px;
+        background: var(--panel);
         border: 1px solid var(--line-2);
-        font-size: 21px;
-        font-weight: 600;
-        white-space: nowrap;
+      }
+      .f4::before {
+        content: "";
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        margin-top: -6px;
+        border-radius: 50%;
+        background: var(--c);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--c) 22%, transparent);
+      }
+      .f4-n {
+        flex: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-family: var(--mono);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--c);
+        background: color-mix(in srgb, var(--c) 15%, transparent);
+      }
+      .f4 b {
+        display: block;
+        font-size: 27px;
+      }
+      .f4 small {
+        display: block;
+        font-size: 17px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .f4.last {
+        border-color: color-mix(in srgb, var(--green) 60%, transparent);
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--green) 10%, transparent);
       }
 
       /* ---------- 终端 ---------- */
@@ -2311,38 +2358,56 @@
               <span
                 class="pill"
                 style="margin-left: 10px; font-size: 15px; font-weight: 500"
-                >PingCode 黑客松</span
+                >PingCode 黑客马拉松</span
               >
             </div>
             <h1 class="cover-title rise" style="--d: 1">
-              AI 负责写代码，<br /><span class="g">PClaw 负责记住为什么</span>
+              从产品想法，<br /><span class="g">到代码落地</span>
             </h1>
-            <p class="cover-sub rise" style="--d: 2">
+            <p class="cover-lead rise" style="--d: 2">
+              AI 全程参与，过程全程留痕。
+            </p>
+            <p class="cover-sub rise" style="--d: 3">
               把你已经在用的 AI 编码工具，接进 PingCode 的敏捷研发流程
             </p>
-            <div class="cli-row rise" style="--d: 3">
+            <div class="cli-row rise" style="--d: 4">
               <span class="pill">Claude Code</span
               ><span class="pill">Codex</span><span class="pill">CodeBuddy</span
               ><span class="pill">Cursor</span>
             </div>
           </div>
-          <div class="orbit rise" style="--d: 2">
-            <div class="ring"></div>
-            <div class="ring2"></div>
-            <svg class="core"><use href="#logo" /></svg>
-            <span class="on" style="left: 50%; top: 0">需求</span>
-            <span class="on" style="left: 100%; top: 50%">迭代</span>
-            <span class="on" style="left: 50%; top: 100%">工作项</span>
-            <span class="on" style="left: 0; top: 50%">Wiki</span>
+          <div class="flow4">
+            <div class="f4-line"><i></i></div>
+            <div class="f4 rise" style="--c: var(--violet); --d: 2">
+              <span class="f4-n">01</span>
+              <div><b>产品想法</b><small>写下一段产品描述</small></div>
+            </div>
+            <div class="f4 rise" style="--c: var(--blue); --d: 3">
+              <span class="f4-n">02</span>
+              <div><b>需求明确</b><small>AI 规划需求，写清验收标准</small></div>
+            </div>
+            <div class="f4 rise" style="--c: var(--cyan); --d: 4">
+              <span class="f4-n">03</span>
+              <div><b>工作项</b><small>拆成用户故事，排进迭代</small></div>
+            </div>
+            <div class="f4 last rise" style="--c: var(--green); --d: 5">
+              <span class="f4-n">04</span>
+              <div><b>代码落地</b><small>本机 AI 编码、审查、提 PR</small></div>
+            </div>
           </div>
         </div>
         <div class="cover-foot">2026 年 10 月</div>
         <aside class="notes">
           <p>大家好，今天给大家介绍 <b>PClaw</b>。</p>
-          <p>先给一句话结论：<b>AI 负责写代码，PClaw 负责记住为什么。</b></p>
           <p>
-            它不是又一个 AI 编码工具，而是把大家已经在用的 Claude
-            Code、Codex、CodeBuddy、Cursor，接进 PingCode 的敏捷研发流程里。
+            一句话：<b>从产品想法，到代码落地。</b>想法写成产品描述，AI
+            帮你把需求理清楚，再拆成工作项排进迭代，最后在你自己的电脑上把代码写出来
+            —— 每一步都有 AI 参与，每一步都留在 PingCode 里。
+          </p>
+          <p>
+            写代码的工具不换，还是大家已经在用的 Claude
+            Code、Codex、CodeBuddy、Cursor，我们只是把它们接进了 PingCode
+            的敏捷研发流程。
           </p>
         </aside>
       </section>
