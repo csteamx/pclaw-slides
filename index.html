@@ -3135,7 +3135,7 @@
           </p>
           <p>
             ⚠️ 现场网络或额度出问题：输入
-            <b>14</b> 回车跳到附录截图，或切到备用录屏。
+            <b>13</b> 回车跳到演示截图页，或切到备用录屏。
           </p>
         </aside>
       </section>
@@ -3574,40 +3574,11 @@
         </aside>
       </section>
 
-      <!-- 13 结尾 -->
-      <section class="slide end" data-bare data-title="谢谢">
-        <svg class="end-logo rise"><use href="#logo" /></svg>
-        <h1 class="end-title rise" style="--d: 1">
-          工具不换，<span class="g">过程留痕</span>
-        </h1>
-        <p class="end-sub rise" style="--d: 2">
-          从产品想法到代码落地，每一步都有 AI，每一步都有记录。
-        </p>
-        <div class="install rise" style="--d: 3">
-          <div><span class="t-dim">$</span>npm i -g @pclaw/cli</div>
-          <div><span class="t-dim">$</span>pclaw service install</div>
-          <div class="hint">
-            然后在 PingCode「帐号设置 → PClaw AI 助手」里点「连接」
-          </div>
-        </div>
-        <div class="thanks rise" style="--d: 4">谢谢 · 欢迎提问</div>
-        <aside class="notes">
-          <p class="faint">
-            ⏱ 30 秒（累计 13:30）→ 提问；多出的时间留给现场演示
-          </p>
-          <p>
-            最后再重复一遍：<b>工具不换，过程留痕。</b>从产品想法到代码落地，每一步都有
-            AI，每一步都有记录。
-          </p>
-          <p>谢谢大家，欢迎提问。</p>
-        </aside>
-      </section>
-
-      <!-- 14 附录：演示截图 -->
-      <section class="slide" data-title="附录：演示截图">
+      <!-- 13 演示截图 -->
+      <section class="slide" data-title="演示截图">
         <header class="hd" style="margin-bottom: 26px">
-          <div class="kicker">附录 · 演示截图（现场演示出问题时用）</div>
-          <h2 class="title">幸运抽签：一个迭代，从需求到上线</h2>
+          <div class="kicker">回顾 · 演示截图</div>
+          <h2 class="title">幸运抽签：从一个产品想法到实现落地</h2>
         </header>
         <div class="gallery">
           <figure
@@ -3652,154 +3623,39 @@
           ></figure>
         </div>
         <aside class="notes">
+          <p class="faint">
+            ⏱ 30 秒（演示正常时快速带过；演示出问题时用这一页讲完流程）
+          </p>
           <p>
             现场演示的备份：按顺序把整个流程过一遍。点任意一张截图可以放大，再点一下或按任意键关闭。
           </p>
         </aside>
       </section>
 
-      <!-- 15 附录：技术难点 -->
-      <section class="slide" data-title="啃下来的硬骨头">
-        <header class="hd">
-          <div class="kicker">附录 · 技术难点</div>
-          <h2 class="title">啃下来的几块硬骨头</h2>
-        </header>
-        <div class="grid c3 hard">
-          <div class="card rise" style="--d: 1">
-            <h3><i>01</i>iframe 怎么连本机</h3>
-            <p>
-              ws:// 会被 CSP 拦下；实测 fetch + SSE
-              直连可通，做到逐字流式。浏览器真拦了也不怕：自动降级为宿主代发 +
-              轮询。
-            </p>
-          </div>
-          <div class="card rise" style="--d: 2">
-            <h3><i>02</i>身份从哪来</h3>
-            <p>
-              不让用户贴令牌。宿主向平台换 5 分钟的 NIT，本机用 JWKS 验签、按
-              jti 去重；一个 cli 只绑一个账号。
-            </p>
-          </div>
-          <div class="card rise" style="--d: 3">
-            <h3><i>03</i>四个 CLI，一个通道</h3>
-            <p>
-              stream-json、JSON-RPC……
-              格式各不相同，统一成思考、逐字、工具调用、轮次四类事件，并支持跨轮续接。
-            </p>
-          </div>
-          <div class="card rise" style="--d: 4">
-            <h3><i>04</i>只读要真只读</h3>
-            <p>
-              规划、分析、开发方案不能改代码：Claude Code / CodeBuddy 用 plan
-              模式，Codex 用只读沙箱，Cursor 用 ask 模式。
-            </p>
-          </div>
-          <div class="card rise" style="--d: 5">
-            <h3><i>05</i>网络这一关</h3>
-            <p>
-              Claude Code / Codex 要代理：按设置 → 环境变量 →
-              系统代理的顺序找，并真连一下端口；找不到就明说，不让它卡死。
-            </p>
-          </div>
-          <div class="card rise" style="--d: 6">
-            <h3><i>06</i>平台的坑先踩</h3>
-            <p>
-              远端用 npm 装依赖、不认 workspace: 协议，失败还没有日志 ——
-              协议改为内联副本 + 构建前校验，宁可本地失败。
-            </p>
+      <!-- 14 结尾 -->
+      <section class="slide end" data-bare data-title="谢谢">
+        <svg class="end-logo rise"><use href="#logo" /></svg>
+        <h1 class="end-title rise" style="--d: 1">
+          工具不换，<span class="g">过程留痕</span>
+        </h1>
+        <p class="end-sub rise" style="--d: 2">
+          从产品想法到代码落地，每一步都有 AI，每一步都有记录。
+        </p>
+        <div class="install rise" style="--d: 3">
+          <div><span class="t-dim">$</span>npm i -g @pclaw/cli</div>
+          <div><span class="t-dim">$</span>pclaw service install</div>
+          <div class="hint">
+            然后在 PingCode「帐号设置 → PClaw AI 助手」里点「连接」
           </div>
         </div>
+        <div class="thanks rise" style="--d: 4">谢谢 · 欢迎提问</div>
         <aside class="notes">
-          <p class="faint">⏱ 备用：被问到技术细节时</p>
-          <p>挑几个难点讲（按时间选讲 2~3 个）：</p>
+          <p class="faint">⏱ 30 秒（累计 14:00）→ 提问</p>
           <p>
-            <b>01</b> iframe 访问本机：WebSocket 被 CSP 拦，实测 fetch + SSE
-            是通的，就改成 SSE；还做了降级通道。
+            最后再重复一遍：<b>工具不换，过程留痕。</b>从产品想法到代码落地，每一步都有
+            AI，每一步都有记录。
           </p>
-          <p><b>02</b> 身份：不让用户贴令牌，用平台签发的 NIT，零配置。</p>
-          <p>
-            <b>04</b> 只读：规划和分析阶段要保证 AI 不动代码，四个 CLI
-            各自对上了只读模式。
-          </p>
-        </aside>
-      </section>
-
-      <!-- 16 附录：展望 -->
-      <section class="slide" data-title="下一步">
-        <header class="hd">
-          <div class="kicker">附录 · 展望</div>
-          <h2 class="title">下一步：让沉淀下来的知识，再回到 AI 手里</h2>
-        </header>
-        <div class="future">
-          <div class="cycle rise" style="--d: 1">
-            <svg viewBox="0 0 480 440">
-              <defs>
-                <marker
-                  id="mc"
-                  viewBox="0 0 10 10"
-                  refX="8"
-                  refY="5"
-                  markerWidth="7"
-                  markerHeight="7"
-                  orient="auto"
-                >
-                  <path d="M0 0L10 5L0 10z" class="mk-m" />
-                </marker>
-              </defs>
-              <path d="M328 108 Q 408 128 394 206" marker-end="url(#mc)" />
-              <path d="M338 384 Q 240 452 146 386" marker-end="url(#mc)" />
-              <path d="M86 214 Q 78 124 150 108" marker-end="url(#mc)" />
-            </svg>
-            <div class="cn" style="left: 155px; top: 0; --c: var(--blue)">
-              <div>记录<small>每次对话</small></div>
-            </div>
-            <div class="cn" style="left: 300px; top: 220px; --c: var(--green)">
-              <div>沉淀<small>归档与 Wiki</small></div>
-            </div>
-            <div
-              class="cn next"
-              style="left: 10px; top: 220px; --c: var(--amber)"
-            >
-              <div>复用<small>下一步</small></div>
-            </div>
-          </div>
-          <div class="fut-list">
-            <div class="card rise" style="--d: 2">
-              <h3>
-                项目记忆<span class="badge" style="--c: var(--amber)"
-                  >规划中</span
-                >
-              </h3>
-              <p>
-                编码前自动找出相关工作项的历史方案和审查结论，带进上下文 ——
-                不再重复踩同一个坑。
-              </p>
-            </div>
-            <div class="card rise" style="--d: 3">
-              <h3>
-                归档可检索<span class="badge" style="--c: var(--amber)"
-                  >规划中</span
-                >
-              </h3>
-              <p>按内容搜「当时为什么这么做」，而不只是按工作项一个个翻。</p>
-            </div>
-            <div class="card rise" style="--d: 4">
-              <h3>自动化更稳</h3>
-              <p>PR 合并回调加异步重试，平台冷启动超时也不丢状态流转。</p>
-            </div>
-            <div class="card rise" style="--d: 5">
-              <h3>更多验证</h3>
-              <p>普通成员账号、Windows / macOS 全平台、更多 AI CLI。</p>
-            </div>
-          </div>
-        </div>
-        <aside class="notes">
-          <p class="faint">⏱ 备用：被问到下一步时</p>
-          <p>记录和沉淀只是前两步，下一步是<b>复用</b>。</p>
-          <p>
-            让沉淀下来的方案、审查结论，在下一次编码时自动回到 AI 手里 ——
-            这才是真正的「项目记忆」。
-          </p>
+          <p>谢谢大家，欢迎提问。</p>
         </aside>
       </section>
 
