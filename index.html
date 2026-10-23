@@ -1212,6 +1212,9 @@
         display: grid;
         place-items: center;
       }
+      .prod-ic.tomato {
+        background: linear-gradient(135deg, #ff7a59, #e5484d);
+      }
       .prod-h b {
         font-size: 32px;
         display: block;
@@ -2912,31 +2915,29 @@
           </div>
           <div class="term rise" style="--d: 2">
             <div class="term-bar">
-              <i></i><i></i><i></i>~/lucky-draw — claude
+              <i></i><i></i><i></i>~/focus-tomato — claude
             </div>
             <div class="term-body">
               <div>
-                <span class="t-u">›</span> 做一个从名单里随机抽人的小网页
+                <span class="t-u">›</span> 做一个番茄钟小网页，25 分钟倒计时
               </div>
-              <div><span class="t-a">●</span> 好的，先写页面结构和样式……</div>
+              <div><span class="t-a">●</span> 好的，先写计时器和页面……</div>
               <div class="t-in">
                 <span class="t-ok">✓</span>
                 <span class="t-dim">Write</span> index.html
               </div>
+              <div><span class="t-u">›</span> 时间到了弹个提示，再响一声</div>
               <div>
-                <span class="t-u">›</span> 抽的时候名字滚动一下，2 秒左右再停
-              </div>
-              <div>
-                <span class="t-a">●</span> 已加入滚动动画，逐渐减速后定格……
+                <span class="t-a">●</span> 已加入完成提醒，用 Web Audio
+                发提示音……
               </div>
               <div class="t-in">
                 <span class="t-ok">✓</span>
                 <span class="t-dim">Edit</span> index.html
               </div>
-              <div><span class="t-u">›</span> 抽过的人别再抽到了</div>
+              <div><span class="t-u">›</span> 再统计一下今天完成了几个</div>
               <div>
-                <span class="t-a">●</span> 已增加「已抽中」列表，存进
-                localStorage……
+                <span class="t-a">●</span> 已增加今日统计，第二天自动清零……
               </div>
               <div>
                 <span class="t-u">›</span> 再加一个……
@@ -2951,7 +2952,7 @@
           <p>
             如今 Vibe Coding 已经趋于成熟，写代码这件事 AI
             做得越来越好。开一个新项目，很多人会先跟 AI
-            聊需求，再一轮一轮让它写。右边就是今天要演示的「幸运抽签」：页面、滚动动画、不重复抽，几句话就搞定了。
+            聊需求，再一轮一轮让它写。右边就是今天要演示的「专注番茄」：倒计时、完成提醒、今日统计，几句话就搞定了。
           </p>
           <p>
             第一周的体验非常好，像开了挂。注意最后一行
@@ -3004,12 +3005,14 @@
               <b>个人的 AI 对话</b><span>只有自己看得到</span>
             </div>
             <div class="bub">
-              <em>小王 × Claude Code</em>滚动改成 2 秒，太快了看不清……
+              <em>小王 × Claude Code</em>按番茄工作法，倒计时就定 25 分钟……
             </div>
             <div class="bub">
-              <em>小李 × Cursor</em>抽过的人存 localStorage 吧……
+              <em>小李 × Cursor</em>提示音用 Web Audio 生成，不放音频文件……
             </div>
-            <div class="bub"><em>小张 × Codex</em>先不做登录，后面再说……</div>
+            <div class="bub">
+              <em>小张 × Codex</em>统计按日期存，跨天就清零……
+            </div>
           </div>
           <div class="sc rise" style="--d: 3">
             <div class="sc-h">
@@ -3025,15 +3028,15 @@
           <div class="sc rise" style="--d: 4">
             <div class="sc-h"><b>代码仓库</b><span>只说明「是什么」</span></div>
             <div class="codeb">
-              <div><span class="t-dim">// 为什么是 2000？</span></div>
-              <div>const ROLL_MS = <span class="t-ok">2000</span>;</div>
-              <div><span class="t-dim">// 为什么不做登录？</span></div>
-              <div>const STORE = <span class="t-a">'localStorage'</span>;</div>
+              <div><span class="t-dim">// 为什么是 25？</span></div>
+              <div>const FOCUS_MIN = <span class="t-ok">25</span>;</div>
+              <div><span class="t-dim">// 为什么第二天清零？</span></div>
+              <div>const KEY = <span class="t-a">'tomato-' + today</span>;</div>
             </div>
           </div>
         </div>
         <p class="conclusion frag" style="margin-top: 30px">
-          新同事问「抽签为什么滚 2 秒」——
+          新同事问「番茄钟为什么是 25 分钟」——
           该翻<b>谁的聊天记录</b>，还是<b>哪份文档的第几行</b>？
         </p>
         <aside class="notes">
@@ -3045,10 +3048,10 @@
           <p>
             这时候项目知识在哪？在每个人自己的 AI 聊天里，别人看不到；在项目的
             Markdown 里，越写越长，几千行没人读完；代码里只有一个
-            2000，没有为什么。
+            25，没有为什么。
           </p>
           <p>
-            （点出）新同事问「抽签为什么滚 2 秒」——
+            （点出）新同事问「番茄钟为什么是 25 分钟」——
             该翻谁的聊天记录，还是哪份文档的第几行？
           </p>
         </aside>
@@ -3226,39 +3229,34 @@
       </section>
 
       <!-- 7 演示 -->
-      <section class="slide" data-title="演示：幸运抽签">
+      <section class="slide" data-title="演示：专注番茄">
         <header class="hd" style="margin-bottom: 30px">
           <div class="kicker">演示</div>
-          <h2 class="title">今天的演示产品：<span class="g">幸运抽签</span></h2>
+          <h2 class="title">今天的演示产品：<span class="g">专注番茄</span></h2>
         </header>
         <div class="demo2">
           <div class="card prod rise" style="--d: 1">
             <div class="prod-h">
-              <span class="prod-ic">签</span>
+              <span class="prod-ic tomato">番</span>
               <div>
-                <b>幸运抽签</b
-                ><small
-                  >从名单里随机抽人的小网页 ——
-                  课堂点名、会议抽奖、分配任务</small
-                >
+                <b>专注番茄</b><small>一个帮人专注工作的番茄钟小网页</small>
               </div>
+            </div>
+            <div class="prod-sec">
+              <h4>目标用户</h4>
+              <p>需要集中精力工作或学习的个人</p>
             </div>
             <div class="prod-sec">
               <h4>核心功能（只做这三项）</h4>
               <ol>
-                <li><b>名单管理</b>：粘贴名单，每行一个名字，可以清空重来</li>
-                <li>
-                  <b>随机抽取</b>：点「抽一个」，名字滚动约 2 秒后定格，大字显示
-                </li>
-                <li><b>不重复抽</b>：抽中的人进「已抽中」列表，可一键重置</li>
+                <li><b>专注计时</b>：25 分钟倒计时，可以开始、暂停、重置</li>
+                <li><b>完成提醒</b>：倒计时结束时，页面弹出提示并响一声</li>
+                <li><b>今日统计</b>：显示今天完成了几个番茄，第二天自动清零</li>
               </ol>
             </div>
             <div class="prod-sec">
-              <h4>技术约束与范围</h4>
-              <p>
-                单个 index.html，原生 JS，名单存
-                localStorage；一个项目、一个迭代，需求不超过 3 条
-              </p>
+              <h4>技术约束</h4>
+              <p>单个 index.html，用原生 HTML / CSS / JavaScript 写</p>
             </div>
           </div>
           <div class="phases">
@@ -3268,12 +3266,12 @@
               </div>
               <p>
                 AI 规划 3 条需求 → 拆用户故事、排进迭代
-                →「名单管理」走完五步，纪要发到 Wiki
+                →「专注计时」走完五步，纪要发到 Wiki
               </p>
             </div>
             <div class="card phase rise" style="--c: var(--blue); --d: 3">
               <div class="ph">
-                <b>现场：随机抽取</b><span class="badge">真实 AI，现场跑</span>
+                <b>现场：完成提醒</b><span class="badge">真实 AI，现场跑</span>
               </div>
               <p>
                 看自动带入的上下文 → 开发方案 → 编码（等 AI 时讲后两页）→ 审查 →
@@ -3282,11 +3280,11 @@
             </div>
             <div class="card phase rise" style="--c: var(--orange); --d: 4">
               <div class="ph">
-                <b>收尾互动</b><span class="badge">现场抽签</span>
+                <b>收尾</b><span class="badge">看效果 + 追溯</span>
               </div>
               <p>
-                顺着记录追溯「为什么是 2 秒」→
-                把在场观众的名字粘进去，现场抽一个人
+                打开页面，倒计时结束弹出提示、响一声 → 顺着记录追溯「为什么是 25
+                分钟」
               </p>
             </div>
           </div>
@@ -3294,12 +3292,12 @@
         <aside class="notes">
           <p class="faint">⏱ 1 分钟（累计 6:30）→ 讲完切到浏览器</p>
           <p>
-            说了这么多，直接看。演示产品是「幸运抽签」：名单管理、随机抽取、不重复抽三个功能，一个
+            说了这么多，直接看。演示产品是「专注番茄」：一个番茄钟小网页，专注计时、完成提醒、今日统计三个功能，一个
             index.html。
           </p>
           <p>
             <b>提前准备</b>的部分已经在 PingCode
-            里有真实记录；<b>现场</b>做「随机抽取」，点「按这个方案开始编码」后
+            里有真实记录；<b>现场</b>做「完成提醒」，点「按这个方案开始编码」后
             AI 要跑一两分钟，这段时间切回幻灯片讲下一页和再下一页。
           </p>
           <p>
@@ -3469,7 +3467,7 @@
             class="shot rise"
             style="--d: 2"
             data-shot="07-wiki"
-            data-cap="Wiki：「名单管理」的 AI 研发纪要"
+            data-cap="Wiki：「专注计时」的 AI 研发纪要"
           ></figure>
         </div>
         <aside class="notes">
@@ -3481,7 +3479,7 @@
             文档里插入某次研发的记录。
           </p>
           <p>
-            右边是「名单管理」那一篇真实的纪要：总结、改动文件、分支和 PR 都在。
+            右边是「专注计时」那一篇真实的纪要：总结、改动文件、分支和 PR 都在。
           </p>
         </aside>
       </section>
@@ -3490,21 +3488,21 @@
       <section class="slide" data-title="回到开头：追溯">
         <header class="hd">
           <div class="kicker">能力 · 追溯</div>
-          <h2 class="title">三个月后再问：「抽签滚动为什么是 2 秒？」</h2>
+          <h2 class="title">三个月后再问：「番茄钟为什么是 25 分钟？」</h2>
         </header>
         <div class="trace-wrap">
           <div class="trace">
             <div class="tn rise" style="--d: 1; --c: var(--violet)">
               <div class="td"></div>
               <div class="tk">产品描述</div>
-              <div class="tt">「滚动约 2 秒」</div>
+              <div class="tt">「25 分钟倒计时」</div>
               <div class="tx">答案的源头，写在产品里</div>
             </div>
             <div class="tn rise" style="--d: 2; --c: var(--violet)">
               <div class="td"></div>
               <div class="tk">需求</div>
-              <div class="tt">随机抽取</div>
-              <div class="tx">AI 规划，验收标准写明滚动时长</div>
+              <div class="tt">专注计时</div>
+              <div class="tx">AI 规划，写明验收标准</div>
             </div>
             <div class="tn rise" style="--d: 3; --c: var(--blue)">
               <div class="td"></div>
@@ -3545,10 +3543,11 @@
         </div>
         <aside class="notes">
           <p class="faint">⏱ 1 分钟</p>
-          <p>回到开头的问题。三个月后有人问：<b>抽签滚动为什么是 2 秒？</b></p>
+          <p>回到开头的问题。三个月后有人问：<b>番茄钟为什么是 25 分钟？</b></p>
           <p>
-            打开工作项，往上能追到需求、追到产品描述里那句「名字快速滚动约 2
-            秒」；往下能看到开发方案、对话归档、审查结论、PR、Wiki 纪要。
+            打开工作项，往上能追到需求、追到产品描述里那句「25
+            分钟倒计时」；往下能看到开发方案、对话归档、审查结论、PR、Wiki
+            纪要。
           </p>
           <p>
             （点出）从一句产品描述到一行代码，每一步都有记录。<b
@@ -3747,7 +3746,7 @@
       <section class="slide" data-title="演示截图">
         <header class="hd" style="margin-bottom: 26px">
           <div class="kicker">回顾 · 演示截图</div>
-          <h2 class="title">幸运抽签：从一个产品想法到实现落地</h2>
+          <h2 class="title">专注番茄：从一个产品想法到实现落地</h2>
         </header>
         <div class="gallery">
           <figure
@@ -3787,8 +3786,8 @@
           ></figure>
           <figure
             class="shot"
-            data-shot="08-lucky-draw"
-            data-cap="⑧ 幸运抽签页面"
+            data-shot="08-tomato"
+            data-cap="⑧ 专注番茄页面"
           ></figure>
         </div>
         <aside class="notes">
