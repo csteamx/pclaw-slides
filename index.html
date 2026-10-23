@@ -513,7 +513,10 @@
         padding: 22px 28px 26px;
       }
       .term-body div {
-        white-space: pre;
+        white-space: nowrap;
+      }
+      .term-body .t-in {
+        padding-left: 1.4em;
       }
       .t-u {
         color: #7fe3f7;
@@ -1805,6 +1808,87 @@
         letter-spacing: 0.2em;
       }
 
+      /* ---------- 演示 / 规划 / 质量与协作 / 数字条 ---------- */
+      .demo2 {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 28px;
+        flex: 1;
+        min-height: 0;
+      }
+      .phases {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .phase {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 26px;
+        border-left: 4px solid var(--c);
+      }
+      .phase .ph {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .phase .ph b {
+        font-size: 25px;
+      }
+      .phase p {
+        font-size: 19px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .plan3s {
+        flex: 1;
+        min-height: 0;
+      }
+      .pc-note {
+        font-size: 18px;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+      .qc .card {
+        padding: 28px 30px;
+      }
+      .hard h3 i.co {
+        color: var(--green);
+        border-color: color-mix(in srgb, var(--green) 45%, transparent);
+      }
+      .numrow {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 20px;
+      }
+      .numrow span {
+        flex: 1;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        font-size: 17px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .numrow b {
+        font-size: 30px;
+        font-weight: 800;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
       /* ---------- 截图位 ---------- */
       .shot {
         position: relative;
@@ -2398,6 +2482,7 @@
         </div>
         <div class="cover-foot">2026 年 10 月</div>
         <aside class="notes">
+          <p class="faint">⏱ 30 秒</p>
           <p>大家好，今天给大家介绍 <b>PClaw</b>。</p>
           <p>
             一句话：<b>从产品想法，到代码落地。</b>想法写成产品描述，AI
@@ -2443,8 +2528,8 @@
                 <span class="t-u">›</span> 做一个从名单里随机抽人的小网页
               </div>
               <div><span class="t-a">●</span> 好的，先写页面结构和样式……</div>
-              <div>
-                <span class="t-ok"> ✓</span>
+              <div class="t-in">
+                <span class="t-ok">✓</span>
                 <span class="t-dim">Write</span> index.html
               </div>
               <div>
@@ -2453,8 +2538,8 @@
               <div>
                 <span class="t-a">●</span> 已加入滚动动画，逐渐减速后定格……
               </div>
-              <div>
-                <span class="t-ok"> ✓</span>
+              <div class="t-in">
+                <span class="t-ok">✓</span>
                 <span class="t-dim">Edit</span> index.html
               </div>
               <div><span class="t-u">›</span> 抽过的人别再抽到了</div>
@@ -2470,6 +2555,7 @@
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 30 秒（累计 1:00）</p>
           <p>先说一个大家都熟悉的场景。</p>
           <p>
             现在开一个新项目，基本就是跟 AI
@@ -2508,6 +2594,7 @@
         </div>
         <p class="conclusion frag">答案都在某个<b>早已关掉的终端窗口</b>里。</p>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 2:00）</p>
           <p>但项目做到三个月以后，问自己这四个问题（逐个点出）。</p>
           <p>
             一个抽签小网页尚且如此，真实项目更是这样：产品形态、代码由来、设计边界、交接
@@ -2567,6 +2654,7 @@
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 3:00）</p>
           <p>我们把这个问题叫做<b>「上下文蒸发」</b>。</p>
           <p>
             需求在脑子里，没写下来；决策在对话里，窗口一关就没了；最后只剩下代码。代码只能告诉你「是什么」，「为什么」已经蒸发了。
@@ -2628,6 +2716,7 @@
           一句话：<b>让每一行 AI 写的代码，都能追溯到一个需求。</b>
         </p>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 4:00）</p>
           <p>所以我们的理念是八个字：<b>工具不换，过程留痕。</b></p>
           <p>
             四个支柱：工具不换 —— 你用什么 CLI 就用什么；需求驱动 ——
@@ -2677,6 +2766,7 @@
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分 30 秒（累计 5:30）</p>
           <p>
             怎么留痕？我们没有发明新流程，而是<b>顺着敏捷本来的节奏</b>：产品、项目、迭代、工作项，最后沉淀到
             Wiki。
@@ -2688,74 +2778,13 @@
         </aside>
       </section>
 
-      <!-- 7 闭环 -->
-      <section class="slide" data-title="双向闭环">
-        <header class="hd">
-          <div class="kicker">理念 · 机制</div>
-          <h2 class="title">
-            PingCode 把上下文交给 AI，AI 把过程还给 PingCode
-          </h2>
-        </header>
-        <div class="loop">
-          <div class="lbox pc rise" style="--d: 1">
-            <div class="lb-t">PingCode</div>
-            <div class="lb-s">项目 · 产品<br />Wiki · TestHub</div>
-          </div>
-          <div class="lmid">
-            <div class="band out rise" style="--d: 2">
-              <div class="band-t">带着上下文开工</div>
-              <div class="chips">
-                <span>工作项描述</span><span>所属迭代与目标</span
-                ><span>同迭代的工作项</span><span>来源需求与客户工单</span
-                ><span>团队约定：分支、提交模板、规则</span>
-              </div>
-              <div class="arr r"></div>
-            </div>
-            <div class="band in rise" style="--d: 3">
-              <div class="arr l"></div>
-              <div class="chips">
-                <span>开发方案</span><span>对话总结归档</span
-                ><span>测试用例</span><span>审查结论</span
-                ><span>分支、提交、PR</span><span>状态流转</span
-                ><span>Wiki 纪要</span>
-              </div>
-              <div class="band-t">把过程写回来</div>
-            </div>
-          </div>
-          <div class="lbox me rise" style="--d: 1">
-            <div class="lb-t">你的电脑</div>
-            <div class="lb-s">
-              pclaw 本机网关<br />Claude Code · Codex<br />CodeBuddy · Cursor
-            </div>
-          </div>
-        </div>
-        <p class="foot-line loop-foot rise" style="--d: 4">
-          AI
-          不只看到你这一句话，还知道<b>这个工作项是什么、属于哪个迭代、团队有什么规矩</b>。
-        </p>
-        <aside class="notes">
-          <p>核心机制是一个<b>双向闭环</b>。</p>
-          <p>
-            往右：开工时，PClaw
-            自动把工作项描述、所属迭代和目标、同迭代的其他工作项、来源需求和客户原话、团队约定，一起交给
-            AI。
-          </p>
-          <p>
-            往左：AI
-            干完的方案、对话总结、测试用例、审查结论、PR、状态流转、Wiki
-            纪要，全部写回 PingCode。
-          </p>
-          <p>AI 不只看到你这一句话，它知道自己在为什么而写。</p>
-        </aside>
-      </section>
-
-      <!-- 8 演示产品 -->
-      <section class="slide" data-title="演示产品：幸运抽签">
-        <header class="hd">
-          <div class="kicker">演示 · 产品</div>
+      <!-- 7 演示 -->
+      <section class="slide" data-title="演示：幸运抽签">
+        <header class="hd" style="margin-bottom: 30px">
+          <div class="kicker">演示</div>
           <h2 class="title">今天的演示产品：<span class="g">幸运抽签</span></h2>
         </header>
-        <div class="demo-prod">
+        <div class="demo2">
           <div class="card prod rise" style="--d: 1">
             <div class="prod-h">
               <span class="prod-ic">签</span>
@@ -2772,205 +2801,87 @@
               <ol>
                 <li><b>名单管理</b>：粘贴名单，每行一个名字，可以清空重来</li>
                 <li>
-                  <b>随机抽取</b>：点「抽一个」，名字快速滚动约 2
-                  秒，停在抽中的人上，大字显示
+                  <b>随机抽取</b>：点「抽一个」，名字滚动约 2 秒后定格，大字显示
                 </li>
-                <li>
-                  <b>不重复抽</b
-                  >：抽中的人进「已抽中」列表，下次不会再抽到；可一键重置
-                </li>
+                <li><b>不重复抽</b>：抽中的人进「已抽中」列表，可一键重置</li>
               </ol>
             </div>
             <div class="prod-sec">
-              <h4>技术约束</h4>
+              <h4>技术约束与范围</h4>
               <p>
-                单个 index.html，原生 HTML / CSS / JavaScript；名单存
-                localStorage；不做登录和多用户；浏览器直接打开就能运行
+                单个 index.html，原生 JS，名单存
+                localStorage；一个项目、一个迭代，需求不超过 3 条
               </p>
             </div>
-            <div class="prod-sec">
-              <h4>范围</h4>
-              <p>一个项目、一个迭代内完成，需求不超过 3 条</p>
-            </div>
           </div>
-          <div>
-            <div class="ld-mock rise" style="--d: 2">
-              <span class="mock-tag">效果示意</span>
-              <div class="ld-window">
-                <div class="ld-list">
-                  <div>赵晨</div>
-                  <div>钱多多</div>
-                  <div>孙一鸣</div>
-                  <div>李想</div>
-                  <div>周游</div>
-                  <div>吴优</div>
-                  <div>郑好</div>
-                  <div class="win">王小明</div>
-                </div>
+          <div class="phases">
+            <div class="card phase rise" style="--c: var(--green); --d: 2">
+              <div class="ph">
+                <b>提前准备</b><span class="badge">PingCode 里有真实记录</span>
               </div>
-              <div class="ld-btn">抽一个</div>
-              <div class="ld-meta">
-                <span>名单 32 人</span><span>已抽中 3 人</span>
-              </div>
+              <p>
+                AI 规划 3 条需求 → 拆用户故事、排进迭代
+                →「名单管理」走完五步，纪要发到 Wiki
+              </p>
             </div>
-            <ul class="why">
-              <li class="rise" style="--d: 3">
-                <b>一个迭代做得完</b>：需求 → 迭代 → 编码 → Wiki 完整走一遍
-              </li>
-              <li class="rise" style="--d: 4">
-                <b>滚动动画最直观</b>：现场编码，改完立刻看得见
-              </li>
-              <li class="rise" style="--d: 5">
-                <b>结尾能互动</b>：用它从在场观众里抽一个人
-              </li>
-            </ul>
+            <div class="card phase rise" style="--c: var(--blue); --d: 3">
+              <div class="ph">
+                <b>现场：随机抽取</b><span class="badge">真实 AI，现场跑</span>
+              </div>
+              <p>
+                看自动带入的上下文 → 开发方案 → 编码（等 AI 时讲后两页）→ 审查 →
+                提 PR → 合并自动完成
+              </p>
+            </div>
+            <div class="card phase rise" style="--c: var(--orange); --d: 4">
+              <div class="ph">
+                <b>收尾互动</b><span class="badge">现场抽签</span>
+              </div>
+              <p>
+                顺着记录追溯「为什么是 2 秒」→
+                把在场观众的名字粘进去，现场抽一个人
+              </p>
+            </div>
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 6:30）→ 讲完切到浏览器</p>
           <p>
-            说了这么多，直接看。今天的演示产品是「幸运抽签」——
-            一个从名单里随机抽人的小网页。
+            说了这么多，直接看。演示产品是「幸运抽签」：名单管理、随机抽取、不重复抽三个功能，一个
+            index.html。
           </p>
           <p>
-            三个功能：名单管理、随机抽取、不重复抽。技术约束很简单：一个
-            index.html，原生 JS，localStorage，浏览器打开就能跑。
-          </p>
-          <p>
-            选它是因为：一个迭代做得完、滚动动画直观，而且结尾可以拿它跟大家互动。
-          </p>
-        </aside>
-      </section>
-
-      <!-- 9 演示安排 -->
-      <section class="slide" data-title="演示安排">
-        <header class="hd">
-          <div class="kicker">演示 · 安排</div>
-          <h2 class="title">提前铺好路，现场写最直观的那一段</h2>
-        </header>
-        <div class="plan3">
-          <div class="card pcol rise" style="--c: var(--green); --d: 1">
-            <div class="ph">
-              <b>提前准备</b><span class="badge">PingCode 里有真实记录</span>
-            </div>
-            <ul class="dot-list">
-              <li>产品写好描述，<b>AI 规划出 3 条需求</b></li>
-              <li>项目关联产品，<b>AI 拆用户故事、排进迭代</b></li>
-              <li>
-                <b>「名单管理」</b>走完五步：方案 → 编码 → 用例 → 审查 →
-                PR，合并后自动完成，纪要发到 Wiki
-              </li>
-            </ul>
-          </div>
-          <div class="card pcol rise" style="--c: var(--blue); --d: 2">
-            <div class="ph">
-              <b>现场：随机抽取</b><span class="badge">真实 AI，现场跑</span>
-            </div>
-            <ul class="dot-list">
-              <li>打开工作项，看<b>自动带入的上下文</b></li>
-              <li>
-                AI 出开发方案 →「按这个方案开始编码」<br /><span class="faint"
-                  >（AI 写代码时切回幻灯片讲）</span
-                >
-              </li>
-              <li>AI 审查 → 提交 PR → 合并，<b>工作项自动完成</b></li>
-              <li>浏览器打开 index.html，<b>看 2 秒滚动</b></li>
-            </ul>
-          </div>
-          <div class="card pcol rise" style="--c: var(--orange); --d: 3">
-            <div class="ph">
-              <b>收尾互动</b><span class="badge">现场抽签</span>
-            </div>
-            <ul class="dot-list">
-              <li>回到工作项，顺着记录追溯<b>「为什么是 2 秒」</b></li>
-              <li>迭代页生成<b>AI 迭代总结</b>，发布到 Wiki</li>
-              <li>把在场观众的名字粘进去，<b>现场抽一个人</b></li>
-            </ul>
-          </div>
-        </div>
-        <p class="plan-note rise" style="--d: 4">
-          「不重复抽」依赖「随机抽取」，排在它后面 ——
-          <b>时间够就现场接着做</b>，不够就会后完成。
-        </p>
-        <aside class="notes">
-          <p>演示分三段。</p>
-          <p>
-            <b>提前准备</b>的部分已经在 PingCode 里留下了真实记录：需求是 AI
-            按产品描述规划的，用户故事和迭代是 AI
-            拆和排的，「名单管理」已经完整走完五步。
-          </p>
-          <p>
-            <b>现场</b>做「随机抽取」：点「按这个方案开始编码」之后，AI
-            要跑一两分钟 ——
-            这段时间我切回幻灯片，讲讲背后每一层做了什么（下一页起）。
+            <b>提前准备</b>的部分已经在 PingCode
+            里有真实记录；<b>现场</b>做「随机抽取」，点「按这个方案开始编码」后
+            AI 要跑一两分钟，这段时间切回幻灯片讲下一页和再下一页。
           </p>
           <p>
             ⚠️ 现场网络或额度出问题：输入
-            <b>23</b> 回车跳到附录截图，或切到备用录屏。
+            <b>15</b> 回车跳到附录截图，或切到备用录屏。
           </p>
-          <p>→ 现在切到浏览器。</p>
         </aside>
       </section>
 
-      <!-- 10 产品层 -->
-      <section class="slide" data-title="产品：需求先想清楚">
-        <header class="hd">
-          <div class="kicker">能力 · 产品</div>
-          <h2 class="title">先把需求想清楚，再动手写</h2>
+      <!-- 8 规划 -->
+      <section class="slide" data-title="规划交给 AI">
+        <header class="hd" style="margin-bottom: 28px">
+          <div class="kicker">能力 · 规划</div>
+          <h2 class="title">从想法到迭代，规划也交给 AI</h2>
         </header>
-        <div class="shot-layout">
-          <figure
-            class="shot rise"
-            style="--d: 1"
-            data-shot="01-product-plan"
-            data-cap="产品 → AI 助手：按产品描述规划出的需求"
-          ></figure>
-          <div class="side">
-            <div class="side-item rise" style="--d: 2">
-              <span class="where">产品 → AI 助手</span>
-              <h3>AI 规划需求</h3>
-              <p>
-                读产品描述和已有需求，规划需求模块和需求；每条写清描述、用户价值、验收标准、优先级，勾选后一键建进产品。
-              </p>
-            </div>
-            <div class="side-item rise" style="--d: 3">
-              <span class="where">工单 → AI 助手</span>
-              <h3>工单 AI 分析</h3>
-              <p>
-                只读模式读产品下所有项目的代码，判断是缺陷还是新需求；要研发处理的先提一条需求，自动和工单关联。
-              </p>
-            </div>
-            <div class="principle rise" style="--d: 4">
-              <b>AI 给建议，人来拍板。</b
-              >所有创建都由人点按钮确认，不会自动往平台里塞东西。
-            </div>
-          </div>
-        </div>
-        <aside class="notes">
-          <p>
-            （如果正在现场编码：AI
-            写代码的这一两分钟，我们看看它背后每一层发生了什么。）
-          </p>
-          <p>
-            从最上游开始。产品经理写好产品描述，AI
-            规划需求模块和需求，每条带用户价值和验收标准。左边就是「幸运抽签」的需求，是
-            AI 按产品描述规划出来的。
-          </p>
-          <p>
-            客户工单进来，AI
-            以只读模式读这个产品下所有项目的代码，判断是缺陷还是新需求。
-          </p>
-          <p>原则：<b>AI 给建议、人来拍板</b>，所有创建都要人点按钮。</p>
-        </aside>
-      </section>
-
-      <!-- 11 项目与迭代 -->
-      <section class="slide" data-title="项目与迭代：规划交给 AI">
-        <header class="hd" style="margin-bottom: 30px">
-          <div class="kicker">能力 · 项目与迭代</div>
-          <h2 class="title">从需求到迭代，规划也交给 AI</h2>
-        </header>
-        <div class="grid c2 plan2">
+        <div class="grid c3 plan3s">
           <div class="pcol2 rise" style="--d: 1">
+            <div class="ft">
+              <span class="where">产品 → AI 助手</span>
+              <h3>规划需求</h3>
+            </div>
+            <figure
+              class="shot"
+              data-shot="01-product-plan"
+              data-cap="按产品描述规划出的需求"
+            ></figure>
+            <p class="pc-note">读产品描述，写清用户价值、验收标准、优先级</p>
+          </div>
+          <div class="pcol2 rise" style="--d: 2">
             <div class="ft">
               <span class="where">项目 → AI 助手 → 工作项</span>
               <h3>拆用户故事</h3>
@@ -2978,17 +2889,11 @@
             <figure
               class="shot"
               data-shot="02-story-plan"
-              data-cap="AI 把需求拆成用户故事"
+              data-cap="AI 拆出的用户故事"
             ></figure>
-            <ul class="dot-list">
-              <li>
-                给出优先级、故事点、工时、风险；依赖用 PingCode
-                原生的「阻塞」关联
-              </li>
-              <li>工程目录还是空的，会先排一条「技术选型与项目搭建」</li>
-            </ul>
+            <p class="pc-note">优先级、故事点、风险；依赖用「阻塞」关联</p>
           </div>
-          <div class="pcol2 rise" style="--d: 2">
+          <div class="pcol2 rise" style="--d: 3">
             <div class="ft">
               <span class="where">项目 → AI 助手 → 迭代</span>
               <h3>排迭代</h3>
@@ -2998,152 +2903,86 @@
               data-shot="03-sprint-plan"
               data-cap="AI 按容量排好的迭代"
             ></figure>
-            <ul class="dot-list">
-              <li>填容量和起止时间，AI 先估故事点，再按优先级和依赖装填</li>
-              <li>给出迭代名称和目标，确认后建迭代并排入</li>
-            </ul>
+            <p class="pc-note">按容量、优先级和依赖装填，确认后建迭代</p>
           </div>
         </div>
+        <div class="principle rise" style="--d: 4; margin-top: 22px">
+          <b>AI 给建议，人来拍板。</b>所有创建都由人点按钮确认；工单进来，AI
+          也能只读分析代码，判断是缺陷还是新需求。
+        </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（AI 编码时讲）</p>
+          <p>（AI 写代码的这一两分钟，看看它前面几步是怎么来的。）</p>
           <p>
-            需求进了项目，AI
-            把它拆成用户故事：优先级、故事点、工时、风险、依赖都给出来，依赖用
-            PingCode 原生的「阻塞」关联。工程目录还是空的时候，AI
-            会自动先排一条「技术选型与项目搭建」。
+            产品描述 → AI 规划需求，每条带用户价值和验收标准；需求进项目，AI
+            拆成用户故事，依赖用 PingCode 原生的「阻塞」关联；再按容量排进迭代。
           </p>
-          <p>
-            排迭代：填容量和时间，AI
-            先估点，再按优先级和依赖装填，放不下的跳过，确认后建迭代。
-          </p>
+          <p>原则：<b>AI 给建议、人来拍板</b>，所有创建都要人点按钮。</p>
         </aside>
       </section>
 
-      <!-- 12 工作项 -->
-      <section class="slide" data-title="工作项：五步走完">
-        <header class="hd" style="margin-bottom: 26px">
-          <div class="kicker">能力 · 工作项</div>
-          <h2 class="title">一个工作项，五步走完</h2>
-        </header>
-        <figure
-          class="shot wi-shot rise"
-          style="--d: 1"
-          data-shot="04-workitem"
-          data-cap="工作项 → AI 助手：自动带入上下文，步骤条走完五步"
-        ></figure>
-        <div class="grid c5 step-desc">
-          <div class="sd rise" style="--d: 2">
-            <b><em>⓪</em>开发方案</b>
-            <p>只读分析本地代码：需求理解、实现方案、步骤、风险、工作量</p>
-          </div>
-          <div class="sd rise" style="--d: 3">
-            <b><em>①</em>编码</b>
-            <p>按方案写代码，逐字流式输出，每轮列出改动的文件</p>
-          </div>
-          <div class="sd rise" style="--d: 4">
-            <b><em>②</em>测试用例</b>
-            <p>按需求和改动生成用例写进 TestHub；还能在本机逐条执行、回填</p>
-          </div>
-          <div class="sd rise" style="--d: 5">
-            <b><em>③</em>AI 审查</b>
-            <p>
-              另起审查会话，「必须修改」和「建议修改」分开，复审只核对上一轮
-            </p>
-          </div>
-          <div class="sd rise" style="--d: 6">
-            <b><em>④</em>提交 PR</b>
-            <p>按团队约定建分支、提交、推送、建 PR，并自动总结归档</p>
-          </div>
-        </div>
-        <aside class="notes">
-          <p>这是开发者每天待的地方：工作项详情里的「AI 助手」页签。</p>
-          <p>
-            顶上选
-            CLI、模型、推理强度；下面那条是<b>自动带入的上下文</b>：工作项、所属迭代、来源需求、项目约定。
-          </p>
-          <p>
-            五步：开发方案、编码、测试用例、AI 审查、提交
-            PR。每一步都在时间线上留下记录，关掉页签再打开，停在原来那一步。
-          </p>
-          <p>（如在现场编码：差不多该回浏览器看看 AI 写完没有。）</p>
-        </aside>
-      </section>
-
-      <!-- 13 质量 -->
-      <section class="slide" data-title="质量靠流程">
+      <!-- 9 质量与协作 -->
+      <section class="slide" data-title="质量与协作">
         <header class="hd">
-          <div class="kicker">能力 · 质量</div>
-          <h2 class="title">质量不靠自觉，靠流程</h2>
+          <div class="kicker">能力 · 质量与协作</div>
+          <h2 class="title">质量靠流程，协作靠一份共享的上下文</h2>
         </header>
-        <div class="grid c2 qual">
-          <div class="card rise" style="--c: var(--violet); --d: 1">
-            <span class="qi"
-              ><svg viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.3-4.3M8 11l2 2 4-4" /></svg
-            ></span>
-            <h3>AI 审查<small>不会无限审下去</small></h3>
+        <div class="grid c3 hard qc">
+          <div class="card rise" style="--d: 1">
+            <h3><i>质量</i>AI 审查</h3>
             <p>
-              「必须修改」只限需求没完成、会出错的
-              bug、安全、丢数据、构建或测试失败；其余都是建议，不挡提交。第二轮起只复核上一轮。
+              「必须修改」只限需求没完成、bug、安全、丢数据、构建失败；其余是建议。复审只核对上一轮，不会无限审。
             </p>
           </div>
-          <div class="card rise" style="--c: var(--blue); --d: 2">
-            <span class="qi"
-              ><svg viewBox="0 0 24 24">
-                <path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z" />
-                <path d="M8.5 12l2.5 2.5 4.5-5" /></svg
-            ></span>
-            <h3>质量门禁<small>状态流校验器</small></h3>
+          <div class="card rise" style="--d: 2">
+            <h3><i>质量</i>质量门禁</h3>
             <p>
-              挂在「进行中 →
-              已完成」上：最近一次审查「可以提交」、且之后没再改代码，才放行。
+              挂在状态流上：最近一次审查「可以提交」、之后没再改代码，工作项才能流转到「已完成」。
             </p>
           </div>
-          <div class="card rise" style="--c: var(--green); --d: 3">
-            <span class="qi"
-              ><svg viewBox="0 0 24 24">
-                <rect x="4" y="3" width="16" height="18" rx="2" />
-                <path d="M8 8h8M8 12h8M8 16h5" /></svg
-            ></span>
-            <h3>测试用例<small>TestHub</small></h3>
+          <div class="card rise" style="--d: 3">
+            <h3><i>质量</i>用例与 PR</h3>
             <p>
-              AI
-              按需求和改动设计用例，自动归到需求所在模块；在本机逐条执行，人确认后回填测试计划。
+              AI 生成用例写进 TestHub、本机执行后回填；PR 合并后 webhook
+              把工作项自动走到完成。
             </p>
           </div>
-          <div class="card rise" style="--c: var(--amber); --d: 4">
-            <span class="qi"
-              ><svg viewBox="0 0 24 24">
-                <circle cx="6" cy="5" r="2" />
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="18" cy="12" r="2" />
-                <path d="M6 7v10M6 7c0 4 4 5 10 5" /></svg
-            ></span>
-            <h3>PR 合并即完成<small>GitHub webhook</small></h3>
+          <div class="card rise" style="--d: 4">
+            <h3><i class="co">协作</i>领取即开工</h3>
             <p>
-              从 PR
-              标题认出工作项编号，沿状态流走到「已完成」并留评论；可要求合并时也要过门禁。
+              只有负责人能让 AI
+              干活；没人领的工作项，开工时自动指派给自己并改成「进行中」。
+            </p>
+          </div>
+          <div class="card rise" style="--d: 5">
+            <h3><i class="co">协作</i>约定统一注入</h3>
+            <p>
+              分支名规则、提交信息模板、项目规则自动带进上下文 —— 每个人的 AI
+              守同一套规矩。
+            </p>
+          </div>
+          <div class="card rise" style="--d: 6">
+            <h3><i class="co">协作</i>完成提醒</h3>
+            <p>
+              AI 跑完，在 PingCode 任意页面弹卡片，还有系统桌面通知；Claude
+              Code、Codex、Cursor 各用各的。
             </p>
           </div>
         </div>
         <aside class="notes">
-          <p>有了 AI，质量更不能靠自觉。</p>
+          <p class="faint">⏱ 1 分钟（AI 编码时讲）→ 讲完回浏览器看结果</p>
           <p>
-            审查有明确标准，「必须修改」只限几类严重问题，复审只核对上一轮 ——
-            不会「审了又改、改了又审」没完没了。
+            有了 AI，质量更不能靠自觉：审查有明确标准，结论接上 PingCode
+            的状态流校验器，没过审查流转不到「已完成」；PR 合并后自动完成。
           </p>
           <p>
-            审查结论接上 PingCode
-            的<b>状态流校验器</b>：没过审查，工作项流转不到「已完成」。
-          </p>
-          <p>
-            用例写进 TestHub、AI 本机执行后回填；PR 合并后 webhook
-            自动把工作项走到完成。
+            协作的关键：<b>上下文是共享的，AI 是各自的</b
+            >。领取规则、统一约定、完成提醒，让多人并行不打架。
           </p>
         </aside>
       </section>
 
-      <!-- 14 沉淀 -->
+      <!-- 10 沉淀 -->
       <section class="slide" data-title="沉淀到 Wiki">
         <header class="hd">
           <div class="kicker">能力 · 沉淀</div>
@@ -3187,6 +3026,7 @@
           ></figure>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（演示结束后，累计约 12:00）</p>
           <p>重点来了：<b>沉淀</b>。</p>
           <p>
             四层：每段对话由同一个 CLI 写总结，提 PR 后自动归档；一键发布成 Wiki
@@ -3199,88 +3039,7 @@
         </aside>
       </section>
 
-      <!-- 15 协作 -->
-      <section class="slide" data-title="多人协作">
-        <header class="hd">
-          <div class="kicker">能力 · 协作</div>
-          <h2 class="title">一份上下文，各自的 AI</h2>
-        </header>
-        <div class="collab">
-          <div class="team rise" style="--d: 1">
-            <svg class="links" viewBox="0 0 692 520" preserveAspectRatio="none">
-              <path d="M346 136 L105 330" />
-              <path d="M346 136 L346 330" />
-              <path d="M346 136 L587 330" />
-            </svg>
-            <div class="hub">
-              <b>PingCode · 共享</b>
-              <p>需求 · 迭代 · 团队约定<br />对话归档 · Wiki</p>
-            </div>
-            <div class="mem" style="left: 0; --c: var(--violet)">
-              <div class="av">产</div>
-              <b>产品经理</b><small>规划需求、分析工单</small
-              ><span class="tool">Claude Code</span>
-            </div>
-            <div
-              class="mem"
-              style="left: 50%; transform: translateX(-50%); --c: var(--cyan)"
-            >
-              <div class="av">项</div>
-              <b>项目经理</b><small>拆故事、排迭代、总结</small
-              ><span class="tool">Codex</span>
-            </div>
-            <div class="mem" style="right: 0; --c: var(--green)">
-              <div class="av">开</div>
-              <b>开发</b><small>方案、编码、审查、PR</small
-              ><span class="tool">Cursor</span>
-            </div>
-          </div>
-          <ul class="cl-list">
-            <li class="rise" style="--d: 2; --c: var(--blue)">
-              <b>领取即开工</b
-              ><span
-                >只有负责人能让 AI
-                干活；没人领的，开工时自动指派给自己并改成「进行中」</span
-              >
-            </li>
-            <li class="rise" style="--d: 3; --c: var(--violet)">
-              <b>约定统一注入</b
-              ><span
-                >分支名规则、提交信息模板、项目规则 —— 每个人的 AI
-                守同一套规矩</span
-              >
-            </li>
-            <li class="rise" style="--d: 4; --c: var(--cyan)">
-              <b>跨项目协同</b
-              ><span
-                >一个产品由多个项目组成，分析时读整个产品的工程；拆分时一条只改一个项目</span
-              >
-            </li>
-            <li class="rise" style="--d: 5; --c: var(--green)">
-              <b>完成提醒</b
-              ><span
-                >AI 跑完，在 PingCode
-                任意页面弹卡片，还有系统桌面通知，不用守着</span
-              >
-            </li>
-            <li class="rise" style="--d: 6; --c: var(--amber)">
-              <b>权限两道</b
-              ><span>入口按 PingCode 权限显示，页面里再校验一次</span>
-            </li>
-          </ul>
-        </div>
-        <aside class="notes">
-          <p>多人协作的关键：<b>上下文是共享的，AI 是各自的。</b></p>
-          <p>
-            产品经理用 Claude Code 规划需求，项目经理用 Codex 排迭代，开发用
-            Cursor 写代码 ——
-            都没关系，大家读的是同一份需求、同一个迭代、同一套约定。
-          </p>
-          <p>再加上领取规则、完成提醒、权限控制，多人并行不打架。</p>
-        </aside>
-      </section>
-
-      <!-- 16 追溯 -->
+      <!-- 11 追溯 -->
       <section class="slide" data-title="回到开头：追溯">
         <header class="hd">
           <div class="kicker">能力 · 追溯</div>
@@ -3338,6 +3097,7 @@
           </p>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟</p>
           <p>回到开头的问题。三个月后有人问：<b>抽签滚动为什么是 2 秒？</b></p>
           <p>
             打开工作项，往上能追到需求、追到产品描述里那句「名字快速滚动约 2
@@ -3351,7 +3111,7 @@
         </aside>
       </section>
 
-      <!-- 17 架构 -->
+      <!-- 12 架构与数字 -->
       <section class="slide" data-title="技术架构">
         <header class="hd" style="margin-bottom: 26px">
           <div class="kicker">技术 · 架构</div>
@@ -3513,12 +3273,15 @@
             归档由页面经 resolver 写入
           </text>
         </svg>
-        <div class="pkgs rise" style="--d: 2">
-          <span><b>@pclaw/cli</b>本机网关 · 已发布到 npm</span>
-          <span><b>@pclaw/sdk</b>协议契约 · 双方共用</span>
-          <span><b>@pclaw/app</b>Nexus 应用 · 10 个扩展点</span>
+        <div class="numrow rise" style="--d: 2">
+          <span><b>4</b>个 AI 编码 CLI</span>
+          <span><b>10</b>个 PingCode 扩展点</span>
+          <span><b>4</b>个子产品打通 + GitHub</span>
+          <span><b>5 周</b>152 次提交</span>
+          <span><b>315</b>个自动化测试</span>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 13:00）</p>
           <p>技术上一句话：<b>浏览器直连本机，AI 在你自己的电脑上跑。</b></p>
           <p>
             配对：宿主页面向平台换一个 5 分钟的 NIT 令牌，带着它调本机的
@@ -3535,10 +3298,119 @@
         </aside>
       </section>
 
-      <!-- 18 难点 -->
+      <!-- 13 现场抽签 -->
+      <section class="slide finale" data-title="现场抽签">
+        <div class="kicker rise">收尾 · 互动</div>
+        <h1 class="fin-title rise" style="--d: 1">
+          现在，用 AI 刚写好的「幸运抽签」<br />从在场各位里<span class="g"
+            >抽一个人</span
+          >
+        </h1>
+        <div class="fin-steps rise" style="--d: 2">
+          <span>① 粘贴在场观众的名字</span><span>② 点「抽一个」</span
+          ><span>③ 滚动 2 秒……</span>
+        </div>
+        <p class="fin-sub rise" style="--d: 3">
+          它的每一行代码，都能在 PingCode 里找到对应的需求、方案、审查和 PR。
+        </p>
+        <aside class="notes">
+          <p class="faint">⏱ 1 分钟（累计 14:00）</p>
+          <p>最后来点互动。</p>
+          <p>
+            打开 AI 刚写好的 index.html，把在场观众的名字粘进去，点「抽一个」——
+            滚动 2 秒，看看是谁。
+          </p>
+          <p>（提前准备好观众名单文本，复制即可。）</p>
+        </aside>
+      </section>
+
+      <!-- 14 结尾 -->
+      <section class="slide end" data-bare data-title="谢谢">
+        <svg class="end-logo rise"><use href="#logo" /></svg>
+        <h1 class="end-title rise" style="--d: 1">
+          工具不换，<span class="g">过程留痕</span>
+        </h1>
+        <p class="end-sub rise" style="--d: 2">
+          AI 负责写代码，PClaw 负责记住为什么。
+        </p>
+        <div class="install rise" style="--d: 3">
+          <div><span class="t-dim">$</span>npm i -g @pclaw/cli</div>
+          <div><span class="t-dim">$</span>pclaw service install</div>
+          <div class="hint">
+            然后在 PingCode「帐号设置 → PClaw AI 助手」里点「连接」
+          </div>
+        </div>
+        <div class="thanks rise" style="--d: 4">谢谢 · 欢迎提问</div>
+        <aside class="notes">
+          <p class="faint">⏱ 30 秒 → 提问</p>
+          <p>
+            最后再重复一遍：<b
+              >工具不换，过程留痕。AI 负责写代码，PClaw 负责记住为什么。</b
+            >
+          </p>
+          <p>谢谢大家，欢迎提问。</p>
+        </aside>
+      </section>
+
+      <!-- 15 附录：演示截图 -->
+      <section class="slide" data-title="附录：演示截图">
+        <header class="hd" style="margin-bottom: 26px">
+          <div class="kicker">附录 · 演示截图（现场演示出问题时用）</div>
+          <h2 class="title">幸运抽签：一个迭代，从需求到上线</h2>
+        </header>
+        <div class="gallery">
+          <figure
+            class="shot"
+            data-shot="01-product-plan"
+            data-cap="① AI 规划需求"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="02-story-plan"
+            data-cap="② 拆用户故事"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="03-sprint-plan"
+            data-cap="③ 排迭代"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="04-workitem"
+            data-cap="④ 工作项 AI 助手"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="05-review"
+            data-cap="⑤ AI 审查结论"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="06-pr"
+            data-cap="⑥ 提交 PR、合并后自动完成"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="07-wiki"
+            data-cap="⑦ Wiki 研发纪要"
+          ></figure>
+          <figure
+            class="shot"
+            data-shot="08-lucky-draw"
+            data-cap="⑧ 幸运抽签页面"
+          ></figure>
+        </div>
+        <aside class="notes">
+          <p>
+            现场演示的备份：按顺序把整个流程过一遍。点任意一张截图可以放大，再点一下或按任意键关闭。
+          </p>
+        </aside>
+      </section>
+
+      <!-- 16 附录：技术难点 -->
       <section class="slide" data-title="啃下来的硬骨头">
         <header class="hd">
-          <div class="kicker">技术 · 难点</div>
+          <div class="kicker">附录 · 技术难点</div>
           <h2 class="title">啃下来的几块硬骨头</h2>
         </header>
         <div class="grid c3 hard">
@@ -3587,6 +3459,7 @@
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 备用：被问到技术细节时</p>
           <p>挑几个难点讲（按时间选讲 2~3 个）：</p>
           <p>
             <b>01</b> iframe 访问本机：WebSocket 被 CSP 拦，实测 fetch + SSE
@@ -3600,67 +3473,10 @@
         </aside>
       </section>
 
-      <!-- 19 数字 -->
-      <section class="slide" data-title="数字">
-        <header class="hd">
-          <div class="kicker">技术 · 数字</div>
-          <h2 class="title">五周，从一个想法到一条完整链路</h2>
-        </header>
-        <div class="grid c3">
-          <div class="card stat rise" style="--d: 1">
-            <div class="num g">4</div>
-            <div class="lbl">个 AI 编码 CLI</div>
-            <div class="desc">Claude Code · Codex · CodeBuddy · Cursor</div>
-          </div>
-          <div class="card stat rise" style="--d: 2">
-            <div class="num g">10</div>
-            <div class="lbl">个 PingCode 扩展点</div>
-            <div class="desc">
-              工作项、项目、迭代、产品、工单、Wiki、状态流、全局
-            </div>
-          </div>
-          <div class="card stat rise" style="--d: 3">
-            <div class="num g">4</div>
-            <div class="lbl">个子产品打通</div>
-            <div class="desc">
-              项目管理 · 产品管理 · Wiki · 测试管理，外加 GitHub
-            </div>
-          </div>
-          <div class="card stat rise" style="--d: 4">
-            <div class="num g">152</div>
-            <div class="lbl">次提交</div>
-            <div class="desc">2026.09.16 – 10.23，约 5 周</div>
-          </div>
-          <div class="card stat rise" style="--d: 5">
-            <div class="num g">4.6<small>万</small></div>
-            <div class="lbl">行 TypeScript</div>
-            <div class="desc">cli + sdk + app，含测试</div>
-          </div>
-          <div class="card stat rise" style="--d: 6">
-            <div class="num g">315</div>
-            <div class="lbl">个自动化测试</div>
-            <div class="desc">node:test，不调真 AI、不连平台</div>
-          </div>
-        </div>
-        <p class="fineprint">
-          统计于 2026-10-23：git log；packages 下 .ts / .tsx 行数（不含
-          node_modules、dist）；test 目录下的用例数。
-        </p>
-        <aside class="notes">
-          <p>
-            几个数字：五周、152 次提交，4 个 CLI、10 个扩展点、打通 PingCode 4
-            个子产品加 GitHub。
-          </p>
-          <p>
-            315 个自动化测试，不调真 AI、不连平台，保证每次改动都能快速回归。
-          </p>
-        </aside>
-      </section>
-
-      <!-- 20 展望 -->
+      <!-- 17 附录：展望 -->
       <section class="slide" data-title="下一步">
         <header class="hd">
-          <div class="kicker">展望</div>
+          <div class="kicker">附录 · 展望</div>
           <h2 class="title">下一步：让沉淀下来的知识，再回到 AI 手里</h2>
         </header>
         <div class="future">
@@ -3727,117 +3543,11 @@
           </div>
         </div>
         <aside class="notes">
+          <p class="faint">⏱ 备用：被问到下一步时</p>
           <p>记录和沉淀只是前两步，下一步是<b>复用</b>。</p>
           <p>
             让沉淀下来的方案、审查结论，在下一次编码时自动回到 AI 手里 ——
             这才是真正的「项目记忆」。
-          </p>
-        </aside>
-      </section>
-
-      <!-- 21 现场抽签 -->
-      <section class="slide finale" data-title="现场抽签">
-        <div class="kicker rise">收尾 · 互动</div>
-        <h1 class="fin-title rise" style="--d: 1">
-          现在，用 AI 刚写好的「幸运抽签」<br />从在场各位里<span class="g"
-            >抽一个人</span
-          >
-        </h1>
-        <div class="fin-steps rise" style="--d: 2">
-          <span>① 粘贴在场观众的名字</span><span>② 点「抽一个」</span
-          ><span>③ 滚动 2 秒……</span>
-        </div>
-        <p class="fin-sub rise" style="--d: 3">
-          它的每一行代码，都能在 PingCode 里找到对应的需求、方案、审查和 PR。
-        </p>
-        <aside class="notes">
-          <p>最后来点互动。</p>
-          <p>
-            打开 AI 刚写好的 index.html，把在场观众的名字粘进去，点「抽一个」——
-            滚动 2 秒，看看是谁。
-          </p>
-          <p>（提前准备好观众名单文本，复制即可。）</p>
-        </aside>
-      </section>
-
-      <!-- 22 结尾 -->
-      <section class="slide end" data-bare data-title="谢谢">
-        <svg class="end-logo rise"><use href="#logo" /></svg>
-        <h1 class="end-title rise" style="--d: 1">
-          工具不换，<span class="g">过程留痕</span>
-        </h1>
-        <p class="end-sub rise" style="--d: 2">
-          AI 负责写代码，PClaw 负责记住为什么。
-        </p>
-        <div class="install rise" style="--d: 3">
-          <div><span class="t-dim">$</span>npm i -g @pclaw/cli</div>
-          <div><span class="t-dim">$</span>pclaw service install</div>
-          <div class="hint">
-            然后在 PingCode「帐号设置 → PClaw AI 助手」里点「连接」
-          </div>
-        </div>
-        <div class="thanks rise" style="--d: 4">谢谢 · 欢迎提问</div>
-        <aside class="notes">
-          <p>
-            最后再重复一遍：<b
-              >工具不换，过程留痕。AI 负责写代码，PClaw 负责记住为什么。</b
-            >
-          </p>
-          <p>谢谢大家，欢迎提问。</p>
-        </aside>
-      </section>
-
-      <!-- 23 附录：演示截图 -->
-      <section class="slide" data-title="附录：演示截图">
-        <header class="hd" style="margin-bottom: 26px">
-          <div class="kicker">附录 · 演示截图</div>
-          <h2 class="title">幸运抽签：一个迭代，从需求到上线</h2>
-        </header>
-        <div class="gallery">
-          <figure
-            class="shot"
-            data-shot="01-product-plan"
-            data-cap="① AI 规划需求"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="02-story-plan"
-            data-cap="② 拆用户故事"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="03-sprint-plan"
-            data-cap="③ 排迭代"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="04-workitem"
-            data-cap="④ 工作项 AI 助手"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="05-review"
-            data-cap="⑤ AI 审查结论"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="06-pr"
-            data-cap="⑥ 提交 PR、合并后自动完成"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="07-wiki"
-            data-cap="⑦ Wiki 研发纪要"
-          ></figure>
-          <figure
-            class="shot"
-            data-shot="08-lucky-draw"
-            data-cap="⑧ 幸运抽签页面"
-          ></figure>
-        </div>
-        <aside class="notes">
-          <p>
-            现场演示的备份：按顺序把整个流程过一遍。点任意一张截图可以放大，再点一下或按任意键关闭。
           </p>
         </aside>
       </section>
