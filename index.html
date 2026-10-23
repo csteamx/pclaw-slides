@@ -741,6 +741,229 @@
         margin-top: 8px;
       }
 
+      /* ---------- 3 人多了、久了 / 4 散长断 ---------- */
+      .grow {
+        display: grid;
+        grid-template-columns: 1fr 70px 1fr 70px 1fr;
+        align-items: center;
+        padding: 20px 28px;
+        border-radius: 18px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+      }
+      .gs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .gt {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--blue);
+        letter-spacing: 0.06em;
+      }
+      .gc {
+        font-size: 18px;
+        color: var(--muted);
+      }
+      .avs {
+        display: flex;
+      }
+      .avs i {
+        width: 40px;
+        height: 40px;
+        margin-right: -8px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-style: normal;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        background: var(--c);
+        border: 2px solid var(--bg);
+      }
+      .avs i.gone {
+        background: transparent;
+        color: var(--faint);
+        border: 2px dashed var(--line-2);
+      }
+      .garr {
+        height: 2px;
+        margin: 0 14px;
+        background: var(--line-2);
+        position: relative;
+      }
+      .garr::after {
+        content: "";
+        position: absolute;
+        right: -3px;
+        top: -6px;
+        border: 7px solid transparent;
+        border-left: 10px solid var(--line-2);
+        border-right: 0;
+      }
+      .scatter {
+        display: grid;
+        grid-template-columns: 1.1fr 1.1fr 1fr;
+        gap: 20px;
+        margin-top: 22px;
+      }
+      .sc {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 22px;
+        border-radius: 18px;
+        border: 1.5px dashed var(--line-2);
+      }
+      .sc-h {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+      .sc-h b {
+        font-size: 22px;
+      }
+      .sc-h span {
+        font-size: 15px;
+        color: var(--amber);
+      }
+      .bub {
+        font-size: 16px;
+        color: var(--muted);
+        padding: 9px 14px;
+        border-radius: 12px 12px 12px 4px;
+        background: var(--panel-2);
+      }
+      .bub em {
+        display: block;
+        font-style: normal;
+        font-size: 13px;
+        color: var(--faint);
+        margin-bottom: 2px;
+      }
+      .mdf {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 14px;
+        border-radius: 10px;
+        background: var(--panel-2);
+      }
+      .mdf code {
+        font-family: var(--mono);
+        font-size: 15px;
+      }
+      .mdf em {
+        font-style: normal;
+        font-size: 14px;
+        color: var(--amber);
+      }
+      .codeb {
+        flex: 1;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: #0b1022;
+        font-family: var(--mono);
+        font-size: 15px;
+        line-height: 1.9;
+        color: #d5dcf0;
+        white-space: nowrap;
+      }
+      .ssd {
+        position: relative;
+        overflow: hidden;
+        padding: 30px 32px;
+        min-height: 300px;
+        border-top: 3px solid var(--c);
+      }
+      .ssd .big {
+        position: absolute;
+        right: 18px;
+        top: -4px;
+        font-size: 150px;
+        font-weight: 900;
+        line-height: 1;
+        color: color-mix(in srgb, var(--c) 22%, transparent);
+      }
+      .ssd h3 {
+        position: relative;
+        font-size: 30px;
+        margin-top: 104px;
+      }
+      .ssd p {
+        position: relative;
+        font-size: 20px;
+        line-height: 1.7;
+        color: var(--muted);
+        margin-top: 12px;
+      }
+      .shift {
+        display: grid;
+        grid-template-columns: 1fr 90px 1.6fr;
+        align-items: center;
+        margin-top: 44px;
+        padding: 22px 30px;
+        border-radius: 18px;
+        background: linear-gradient(
+          90deg,
+          var(--panel),
+          color-mix(in srgb, var(--green) 10%, transparent)
+        );
+        border: 1px solid var(--line);
+      }
+      .shift small {
+        display: block;
+        font-size: 15px;
+        color: var(--faint);
+        letter-spacing: 0.08em;
+      }
+      .shift b {
+        display: block;
+        font-size: 24px;
+        margin-top: 6px;
+      }
+      .sh-from b {
+        color: var(--muted);
+        text-decoration: line-through;
+        text-decoration-color: color-mix(in srgb, var(--red) 70%, transparent);
+      }
+      .sh-arr {
+        height: 3px;
+        margin: 0 16px;
+        position: relative;
+        background: linear-gradient(90deg, transparent, var(--green));
+      }
+      .sh-arr::after {
+        content: "";
+        position: absolute;
+        right: -3px;
+        top: -7px;
+        border: 8.5px solid transparent;
+        border-left: 13px solid var(--green);
+        border-right: 0;
+      }
+      .sh-chain {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .sh-chain span {
+        font-size: 17px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        color: var(--green);
+        background: color-mix(in srgb, var(--green) 12%, transparent);
+      }
+      .sh-chain i {
+        font-style: normal;
+        color: var(--faint);
+      }
+
       /* ---------- 5 理念 ---------- */
       .title.xl {
         font-size: 76px;
@@ -2568,100 +2791,155 @@
         </aside>
       </section>
 
-      <!-- 3 三个月后 -->
-      <section class="slide" data-title="三个月后">
-        <header class="hd">
-          <div class="kicker">问题 · 三个月后</div>
-          <h2 class="title">三个月后，这些问题你还答得上来吗？</h2>
+      <!-- 3 人多了、久了 -->
+      <section class="slide" data-title="人多了，时间久了">
+        <header class="hd" style="margin-bottom: 30px">
+          <div class="kicker">问题 · 人多了、久了</div>
+          <h2 class="title">人越来越多，时间越来越久，项目知识去哪了？</h2>
         </header>
-        <div class="grid c2">
-          <div class="card q frag">
-            <p class="qt">「抽签滚动为什么是 2 秒？是谁定的？」</p>
-            <span class="ql">产品形态记不清</span>
+        <div class="grow rise" style="--d: 1">
+          <div class="gs">
+            <span class="gt">第 1 周</span>
+            <div class="avs"><i style="--c: var(--blue)">我</i></div>
+            <span class="gc">1 个人 + 1 个 AI，什么都记得</span>
           </div>
-          <div class="card q frag">
-            <p class="qt">「不重复抽这段逻辑，是哪次对话改的？」</p>
-            <span class="ql">代码由来说不清</span>
+          <div class="garr"></div>
+          <div class="gs">
+            <span class="gt">第 3 个月</span>
+            <div class="avs">
+              <i style="--c: var(--blue)">我</i
+              ><i style="--c: var(--violet)">王</i
+              ><i style="--c: var(--cyan)">李</i
+              ><i style="--c: var(--green)">张</i
+              ><i style="--c: var(--amber)">赵</i>
+            </div>
+            <span class="gc">5 个人，各用各的 AI</span>
           </div>
-          <div class="card q frag">
-            <p class="qt">「登录和多用户，是没想到还是故意不做？」</p>
-            <span class="ql">设计边界想不起</span>
-          </div>
-          <div class="card q frag">
-            <p class="qt">「新同事接手，该从哪儿看起？」</p>
-            <span class="ql">交接讲不清</span>
+          <div class="garr"></div>
+          <div class="gs">
+            <span class="gt">第 1 年</span>
+            <div class="avs">
+              <i class="gone">我</i><i class="gone">王</i
+              ><i style="--c: var(--cyan)">李</i
+              ><i style="--c: var(--red)">孙</i
+              ><i style="--c: var(--orange)">周</i
+              ><i style="--c: var(--violet)">吴</i
+              ><i style="--c: var(--green)">郑</i>
+            </div>
+            <span class="gc">维护的人换了一拨，最早的人走了</span>
           </div>
         </div>
-        <p class="conclusion frag">答案都在某个<b>早已关掉的终端窗口</b>里。</p>
+        <div class="scatter">
+          <div class="sc rise" style="--d: 2">
+            <div class="sc-h">
+              <b>个人的 AI 对话</b><span>只有自己看得到</span>
+            </div>
+            <div class="bub">
+              <em>小王 × Claude Code</em>滚动改成 2 秒，太快了看不清……
+            </div>
+            <div class="bub">
+              <em>小李 × Cursor</em>抽过的人存 localStorage 吧……
+            </div>
+            <div class="bub"><em>小张 × Codex</em>先不做登录，后面再说……</div>
+          </div>
+          <div class="sc rise" style="--d: 3">
+            <div class="sc-h">
+              <b>项目里的 Markdown</b><span>越写越长，没人读完</span>
+            </div>
+            <div class="mdf"><code>README.md</code><em>1,200 行</em></div>
+            <div class="mdf"><code>docs/design.md</code><em>3,400 行</em></div>
+            <div class="mdf">
+              <code>docs/notes-v2-final.md</code><em>2,100 行</em>
+            </div>
+            <div class="mdf"><code>CLAUDE.md</code><em>860 行</em></div>
+          </div>
+          <div class="sc rise" style="--d: 4">
+            <div class="sc-h"><b>代码仓库</b><span>只说明「是什么」</span></div>
+            <div class="codeb">
+              <div><span class="t-dim">// 为什么是 2000？</span></div>
+              <div>const ROLL_MS = <span class="t-ok">2000</span>;</div>
+              <div><span class="t-dim">// 为什么不做登录？</span></div>
+              <div>const STORE = <span class="t-a">'localStorage'</span>;</div>
+            </div>
+          </div>
+        </div>
+        <p class="conclusion frag" style="margin-top: 30px">
+          新同事问「抽签为什么滚 2 秒」——
+          该翻<b>谁的聊天记录</b>，还是<b>哪份文档的第几行</b>？
+        </p>
         <aside class="notes">
           <p class="faint">⏱ 1 分钟（累计 2:00）</p>
-          <p>但项目做到三个月以后，问自己这四个问题（逐个点出）。</p>
           <p>
-            一个抽签小网页尚且如此，真实项目更是这样：产品形态、代码由来、设计边界、交接
-            —— 都答不上来。
+            项目刚开始，一个人加一个 AI，什么都记得。三个月后五个人，各用各的
+            AI；一年后维护的人换了一拨，最早的人已经走了。
           </p>
           <p>
-            为什么？（点出最后一句）<b>答案都在某个早已关掉的终端窗口里。</b>
+            这时候项目知识在哪？在每个人自己的 AI 聊天里，别人看不到；在项目的
+            Markdown 里，越写越长，几千行没人读完；代码里只有一个
+            2000，没有为什么。
+          </p>
+          <p>
+            （点出）新同事问「抽签为什么滚 2 秒」——
+            该翻谁的聊天记录，还是哪份文档的第几行？
           </p>
         </aside>
       </section>
 
       <!-- 4 根因 -->
-      <section class="slide" data-title="上下文蒸发">
-        <header class="hd">
+      <section class="slide" data-title="散、长、断">
+        <header class="hd" style="margin-bottom: 34px">
           <div class="kicker">问题 · 根因</div>
           <h2 class="title">
-            AI 让「写」变快了，<span class="g">「记」却没跟上</span>
+            不是没有记录，而是记录<span class="g">「散、长、断」</span>
           </h2>
         </header>
-        <div class="evap">
-          <div class="node ghost rise" style="--d: 1">
-            <div class="vapor"><i></i><i></i><i></i><i></i></div>
-            <div class="nk">需求</div>
-            <div class="nv">在脑子里</div>
-            <div class="nd">从没写下来</div>
+        <div class="grid c3">
+          <div class="card ssd rise" style="--c: var(--violet); --d: 1">
+            <span class="big">散</span>
+            <h3>在个人聊天里</h3>
+            <p>每人一份，别人看不到；窗口一关、人一走，决策就没了。</p>
           </div>
-          <div class="arrow rise" style="--d: 2"></div>
-          <div class="node ghost rise" style="--d: 2">
-            <div class="vapor"><i></i><i></i><i></i><i></i></div>
-            <div class="nk">对话与决策</div>
-            <div class="nv">在终端里</div>
-            <div class="nd">窗口一关就没了</div>
+          <div class="card ssd rise" style="--c: var(--amber); --d: 2">
+            <span class="big">长</span>
+            <h3>Markdown 满屏文字</h3>
+            <p>
+              越写越长、越来越旧，不直观，没人愿意读完，也不知道哪段还算数。
+            </p>
           </div>
-          <div class="arrow rise" style="--d: 3"></div>
-          <div class="node solid rise" style="--d: 3">
-            <div class="nk">代码</div>
-            <div class="nv">在仓库里</div>
-            <div class="nd">唯一留下来的</div>
+          <div class="card ssd rise" style="--c: var(--red); --d: 3">
+            <span class="big">断</span>
+            <h3>和需求对不上</h3>
+            <p>
+              哪段文档对应哪个功能、哪次改动，说不清 —— 只能往上无脑堆功能。
+            </p>
           </div>
         </div>
-        <p class="evap-cap rise" style="--d: 4">
-          代码只说明了<b>「是什么」</b>，<b>「为什么」</b>留在对话里 ——
-          然后蒸发了。我们叫它<b class="g">上下文蒸发</b>。
-        </p>
-        <div class="grid c4 conseq frag">
-          <div class="cq">
-            <b>功能无脑堆叠</b><span>不知道边界，只能往上加</span>
+        <div class="shift frag">
+          <div class="sh-from">
+            <small>现在</small>
+            <b>知识按「人」和「文件」存</b>
           </div>
-          <div class="cq">
-            <b>架构悄悄漂移</b><span>每轮对话各做各的设计</span>
-          </div>
-          <div class="cq">
-            <b>交接全靠口述</b><span>没有记录，只有记忆</span>
-          </div>
-          <div class="cq">
-            <b>多人各说各话</b><span>每个人的 AI 互不相识</span>
+          <div class="sh-arr"></div>
+          <div class="sh-to">
+            <small>应该</small>
+            <b>知识挂在需求上，一眼看清来龙去脉</b>
+            <div class="sh-chain">
+              <span>产品想法</span><i>→</i><span>需求</span><i>→</i
+              ><span>工作项</span><i>→</i><span>代码</span>
+            </div>
           </div>
         </div>
         <aside class="notes">
           <p class="faint">⏱ 1 分钟（累计 3:00）</p>
-          <p>我们把这个问题叫做<b>「上下文蒸发」</b>。</p>
           <p>
-            需求在脑子里，没写下来；决策在对话里，窗口一关就没了；最后只剩下代码。代码只能告诉你「是什么」，「为什么」已经蒸发了。
+            所以问题不是没有记录，而是记录<b>散、长、断</b>：散在个人聊天里，长成满屏的
+            Markdown，和需求、工作项对不上。
           </p>
           <p>
-            后果（点出）：功能无脑堆叠、架构悄悄漂移、交接全靠口述；多人协作更糟
-            —— 每个人的 AI 互不相识，各说各话。
+            （点出）我们的答案：知识不该按「人」和「文件」存，而该<b
+              >挂在需求上</b
+            >
+            —— 从产品想法到需求、到工作项、到代码，一眼看清来龙去脉。
           </p>
         </aside>
       </section>
